@@ -120,3 +120,22 @@ export function validateUniqueSlugs<T extends { slug: string }>(
 
   return errors;
 }
+
+export function validateProductCategoryRelationships(
+  products: Product[],
+  categories: Category[],
+): ValidationError[] {
+  const categorySlugs = new Set(categories.map((c) => c.slug));
+  const errors: ValidationError[] = [];
+
+  products.forEach((product) => {
+    if (!categorySlugs.has(product.category)) {
+      errors.push({
+        field: 'category',
+        message: `Product "${product.name}" references unknown category "${product.category}"`,
+      });
+    }
+  });
+
+  return errors;
+}

@@ -1,15 +1,14 @@
 import { describe, expect, it } from 'vitest';
-import { readFileSync } from 'fs';
+import { readFileSync, readdirSync } from 'fs';
 import { join } from 'path';
 
 const srcDir = join(process.cwd(), 'src');
 
 function getSourceFiles(): string[] {
-  const fs = require('fs');
   const files: string[] = [];
 
   function walk(dir: string) {
-    const entries = fs.readdirSync(dir, { withFileTypes: true });
+    const entries = readdirSync(dir, { withFileTypes: true });
     for (const entry of entries) {
       const fullPath = join(dir, entry.name);
       if (entry.isDirectory()) {

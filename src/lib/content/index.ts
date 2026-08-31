@@ -14,5 +14,6 @@ export {
   validateCategory,
   validateBranch,
   validateUniqueSlugs,
+  validateProductCategoryRelationships,
 } from './schemas';
 export type { ValidationError, ValidationResult } from './schemas';

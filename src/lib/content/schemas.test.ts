@@ -4,6 +4,7 @@ import {
   validateCategory,
   validateBranch,
   validateUniqueSlugs,
+  validateProductCategoryRelationships,
 } from './schemas';
 import type { Branch, Category, Product } from './types';
 
@@ -179,6 +180,34 @@ describe('ContentSchemaTest', () => {
       ];
       const errors = validateUniqueSlugs(products, 'product');
       expect(errors).toHaveLength(0);
+    });
+  });
+
+  describe('validates product-category relationships', () => {
+    it('accepts products with valid category references', () => {
+      const categories = [validCategory({ slug: 'smartphones' })];
+      const products = [validProduct({ category: 'smartphones' })];
+      const errors = validateProductCategoryRelationships(products, categories);
+      expect(errors).toHaveLength(0);
+    });
+
+    it('rejects products with unknown category references', () => {
+      const categories = [validCategory({ slug: 'smartphones' })];
+      const products = [validProduct({ category: 'laptops' })];
+      const errors = validateProductCategoryRelationships(products, categories);
+      expect(errors.length).toBe(1);
+      expect(errors[0].field).toBe('category');
+      expect(errors[0].message).toContain('laptops');
+    });
+
+    it('reports multiple invalid category references', () => {
+      const categories = [validCategory({ slug: 'smartphones' })];
+      const products = [
+        validProduct({ category: 'laptops' }),
+        validProduct({ category: 'tablets', name: 'Tablet' }),
+      ];
+      const errors = validateProductCategoryRelationships(products, categories);
+      expect(errors.length).toBe(2);
     });
   });
 });
