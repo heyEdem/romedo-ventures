@@ -19,5 +19,11 @@
 - **Initialization:** Next.js loads the App Router layout and page through `next dev`, `next build`, or `next start`.
 - **Non-obvious logic:** The route is intentionally a factual placeholder; visual shell and catalogue behavior belong to later tasks.
 
+### Content adapter
+- **Entry point:** `src/lib/content/index.ts`
+- **Key classes/functions:** `createContentAdapter`, `ContentAdapter`, `ContentStore` — typed content models and a provider-neutral adapter that exposes only published records.
+- **Initialization:** Import `createContentAdapter` and pass a `ContentStore` to obtain the public adapter interface.
+- **Non-obvious logic:** The adapter filters out draft records so presentational components never see unpublished content. Branches and contact config are returned without filtering since they have no visibility field.
+
 ## Configuration
 | `NEXT_PUBLIC_SITE_URL` | `http://localhost:3000` | Public site origin for later canonical URL generation |
