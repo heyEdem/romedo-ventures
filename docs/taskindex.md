@@ -1,7 +1,7 @@
 # Romedo Ventures Prototype Task Index
 
 **Last Updated:** 2026-08-31  
-**Completed:** 6/24 (25%)  
+**Completed:** 7/24 (29%)  
 **Status:** In Progress
 
 Checkbox states: `[x]` done · `[~]` in progress · `[ ]` pending. Task IDs are `<phase>.<sequence>`.
@@ -12,13 +12,13 @@ Checkbox states: `[x]` done · `[~]` in progress · `[ ]` pending. Task IDs are 
 |---|---|---:|---|
 | 1 | Foundation and content boundary | 3/3 | Complete |
 | 2 | CMS content and seed data | 3/3 | Complete |
-| 3 | Frontend shell and navigation | 0/3 | Not Started |
+| 3 | Frontend shell and navigation | 1/3 | In Progress |
 | 4 | Catalogue search and filters | 0/3 | Not Started |
 | 5 | Product details and contact links | 0/3 | Not Started |
 | 6 | About, locations, and contact | 0/3 | Not Started |
 | 7 | Quality, SEO, and mobile QA | 0/3 | Not Started |
 | 8 | Vercel deployment and owner demo | 0/3 | Not Started |
-| **Total** | | **6/24** | **In Progress** |
+| **Total** | | **7/24** | **In Progress** |
 
 ## Source map
 
@@ -47,7 +47,7 @@ Checkbox states: `[x]` done · `[~]` in progress · `[ ]` pending. Task IDs are 
 
 ## Phase 3 — Frontend Shell and Navigation
 
-- [ ] 3.1 [Create design tokens and shell](epics/epic-003-frontend-shell-and-navigation/tasks/task-001-create-design-tokens-and-shell.md)
+- [x] 3.1 [Create design tokens and shell](epics/epic-003-frontend-shell-and-navigation/tasks/task-001-create-design-tokens-and-shell.md)
 - [ ] 3.2 [Build homepage sections](epics/epic-003-frontend-shell-and-navigation/tasks/task-002-build-homepage-sections.md)
 - [ ] 3.3 [Build category index and cards](epics/epic-003-frontend-shell-and-navigation/tasks/task-003-build-category-index-and-cards.md)
 

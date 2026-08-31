@@ -36,3 +36,14 @@
 - Added `SeedDataValidationTest` confirming all seed data passes schema validation, slug uniqueness, and category relationship checks.
 - Placeholder branch phone numbers use `+233XXXXXXXXX` format pending real verification.
 - Phase 2 (CMS content and seed data) is now complete.
+
+## 2026-08-31 — Create design tokens and shell
+- Defined CSS custom properties for colors, typography, spacing, breakpoints, radius, shadows, and focus rings in globals.css.
+- Created `Header` component with desktop nav, mobile slide-out menu, WhatsApp and phone CTAs.
+- Created `Footer` component with navigation links and copyright.
+- Updated root layout with semantic landmarks: sticky header, `page-content` main, footer.
+- Wired seed data into layout for contact config and into all route pages for live content.
+- Updated all route pages (products, categories, about, contact) to consume seed data through the adapter.
+- Added vitest path alias config for `@/` imports.
+- Added `shell.test.ts` with NavigationTest, HomepageTest, ResponsiveSmokeTest, and ShellStructureTest (19 tests).
+- All 63 tests pass, lint clean, production build succeeds.

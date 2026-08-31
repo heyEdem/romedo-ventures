@@ -1,10 +1,259 @@
+import Link from 'next/link';
+import { seedStore } from '@/lib/content/seed';
+import { createContentAdapter } from '@/lib/content/adapter';
+
 export const prototypeName = 'Romedo Ventures';
 
 export default function Home() {
+  const adapter = createContentAdapter(seedStore);
+  const categories = adapter.getPublishedCategories();
+  const products = adapter.getPublishedProducts();
+  const featured = products.filter((p) => p.featured);
+  const branches = adapter.getBranches();
+  const { whatsapp, phone } = adapter.getContactConfig();
+
   return (
-    <main>
-      <h1>{prototypeName}</h1>
-      <p>The digital catalogue foundation is ready.</p>
-    </main>
+    <>
+      <section style={{ textAlign: 'center', marginBottom: 'var(--space-12)' }}>
+        <h1
+          style={{
+            fontSize: 'var(--text-4xl)',
+            fontWeight: 'var(--weight-bold)',
+            marginBottom: 'var(--space-4)',
+          }}
+        >
+          {prototypeName}
+        </h1>
+        <p
+          style={{
+            fontSize: 'var(--text-lg)',
+            color: 'var(--color-text-secondary)',
+            maxWidth: '32rem',
+            margin: '0 auto var(--space-6)',
+          }}
+        >
+          Technology for everyday life.
+        </p>
+        <div style={{ display: 'flex', gap: 'var(--space-3)', justifyContent: 'center', flexWrap: 'wrap' }}>
+          <Link
+            href="/products"
+            style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              padding: 'var(--space-3) var(--space-6)',
+              background: 'var(--color-primary)',
+              color: 'var(--color-text-inverse)',
+              borderRadius: 'var(--radius-lg)',
+              fontWeight: 'var(--weight-medium)',
+              textDecoration: 'none',
+            }}
+          >
+            Explore Products
+          </Link>
+          <a
+            href={`https://wa.me/${whatsapp.replace(/[^0-9]/g, '')}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              padding: 'var(--space-3) var(--space-6)',
+              background: 'var(--color-accent)',
+              color: 'var(--color-text-inverse)',
+              borderRadius: 'var(--radius-lg)',
+              fontWeight: 'var(--weight-medium)',
+              textDecoration: 'none',
+            }}
+          >
+            WhatsApp Us
+          </a>
+        </div>
+      </section>
+
+      {categories.length > 0 && (
+        <section style={{ marginBottom: 'var(--space-12)' }}>
+          <h2
+            style={{
+              fontSize: 'var(--text-2xl)',
+              fontWeight: 'var(--weight-semibold)',
+              marginBottom: 'var(--space-6)',
+            }}
+          >
+            Categories
+          </h2>
+          <div
+            style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fill, minmax(14rem, 1fr))',
+              gap: 'var(--space-4)',
+            }}
+          >
+            {categories.map((cat) => (
+              <Link
+                key={cat.slug}
+                href={`/categories/${cat.slug}`}
+                style={{
+                  display: 'block',
+                  padding: 'var(--space-6)',
+                  background: 'var(--color-surface-raised)',
+                  borderRadius: 'var(--radius-xl)',
+                  textDecoration: 'none',
+                  color: 'var(--color-text)',
+                  transition: 'box-shadow var(--transition-base)',
+                }}
+              >
+                <h3 style={{ fontSize: 'var(--text-lg)', marginBottom: 'var(--space-2)' }}>
+                  {cat.name}
+                </h3>
+                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-text-secondary)' }}>
+                  {cat.description}
+                </p>
+              </Link>
+            ))}
+          </div>
+        </section>
+      )}
+
+      {featured.length > 0 && (
+        <section style={{ marginBottom: 'var(--space-12)' }}>
+          <h2
+            style={{
+              fontSize: 'var(--text-2xl)',
+              fontWeight: 'var(--weight-semibold)',
+              marginBottom: 'var(--space-6)',
+            }}
+          >
+            Featured Products
+          </h2>
+          <div
+            style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fill, minmax(14rem, 1fr))',
+              gap: 'var(--space-4)',
+            }}
+          >
+            {featured.map((product) => (
+              <Link
+                key={product.slug}
+                href={`/products/${product.slug}`}
+                style={{
+                  display: 'block',
+                  padding: 'var(--space-6)',
+                  background: 'var(--color-surface-raised)',
+                  borderRadius: 'var(--radius-xl)',
+                  textDecoration: 'none',
+                  color: 'var(--color-text)',
+                  transition: 'box-shadow var(--transition-base)',
+                }}
+              >
+                <h3 style={{ fontSize: 'var(--text-lg)', marginBottom: 'var(--space-2)' }}>
+                  {product.name}
+                </h3>
+                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-text-secondary)' }}>
+                  {product.shortDescription}
+                </p>
+                {product.priceLabel && (
+                  <p style={{ fontSize: 'var(--text-sm)', fontWeight: 'var(--weight-medium)', marginTop: 'var(--space-2)' }}>
+                    {product.priceLabel}
+                  </p>
+                )}
+              </Link>
+            ))}
+          </div>
+        </section>
+      )}
+
+      {branches.length > 0 && (
+        <section style={{ marginBottom: 'var(--space-12)' }}>
+          <h2
+            style={{
+              fontSize: 'var(--text-2xl)',
+              fontWeight: 'var(--weight-semibold)',
+              marginBottom: 'var(--space-6)',
+            }}
+          >
+            Find Us
+          </h2>
+          <div
+            style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fill, minmax(16rem, 1fr))',
+              gap: 'var(--space-4)',
+            }}
+          >
+            {branches.map((branch) => (
+              <div
+                key={branch.name}
+                style={{
+                  padding: 'var(--space-6)',
+                  background: 'var(--color-surface-raised)',
+                  borderRadius: 'var(--radius-xl)',
+                }}
+              >
+                <h3 style={{ fontSize: 'var(--text-lg)', marginBottom: 'var(--space-2)' }}>
+                  {branch.name}
+                </h3>
+                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-text-secondary)', marginBottom: 'var(--space-2)' }}>
+                  {branch.generalLocation}
+                </p>
+                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-text-muted)' }}>
+                  {branch.openingHours}
+                </p>
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
+
+      <section
+        style={{
+          textAlign: 'center',
+          padding: 'var(--space-10) var(--space-4)',
+          background: 'var(--color-surface-raised)',
+          borderRadius: 'var(--radius-xl)',
+        }}
+      >
+        <h2 style={{ fontSize: 'var(--text-2xl)', marginBottom: 'var(--space-4)' }}>
+          Ready to get in touch?
+        </h2>
+        <p style={{ color: 'var(--color-text-secondary)', marginBottom: 'var(--space-6)' }}>
+          Reach out via WhatsApp or give us a call.
+        </p>
+        <div style={{ display: 'flex', gap: 'var(--space-3)', justifyContent: 'center', flexWrap: 'wrap' }}>
+          <a
+            href={`https://wa.me/${whatsapp.replace(/[^0-9]/g, '')}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              padding: 'var(--space-3) var(--space-6)',
+              background: 'var(--color-accent)',
+              color: 'var(--color-text-inverse)',
+              borderRadius: 'var(--radius-lg)',
+              fontWeight: 'var(--weight-medium)',
+              textDecoration: 'none',
+            }}
+          >
+            WhatsApp Us
+          </a>
+          <a
+            href={`tel:${phone}`}
+            style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              padding: 'var(--space-3) var(--space-6)',
+              background: 'var(--color-primary)',
+              color: 'var(--color-text-inverse)',
+              borderRadius: 'var(--radius-lg)',
+              fontWeight: 'var(--weight-medium)',
+              textDecoration: 'none',
+            }}
+          >
+            Call Us
+          </a>
+        </div>
+      </section>
+    </>
   );
 }

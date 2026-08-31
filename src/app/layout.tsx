@@ -1,5 +1,8 @@
 import type { Metadata } from 'next';
 import './globals.css';
+import Header from '@/components/header';
+import Footer from '@/components/footer';
+import { seedStore } from '@/lib/content/seed';
 
 export const metadata: Metadata = {
   title: 'Romedo Ventures',
@@ -11,9 +14,17 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const { contact } = seedStore;
+
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <div className="page-wrapper">
+          <Header whatsapp={contact.whatsapp} phone={contact.phone} />
+          <main className="page-content">{children}</main>
+          <Footer />
+        </div>
+      </body>
     </html>
   );
 }
