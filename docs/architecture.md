@@ -1,12 +1,13 @@
 # Architecture
 
 ## Project Type
-Documentation-first prototype repository; the application stack will be established by Phase 1 Task 1.1 as a Next.js App Router application with TypeScript.
+Next.js 16 App Router application with React 19 and TypeScript 6. The frontend is a documentation-first digital catalogue prototype.
 
 ## Directory Map
 ```text
 docs/       Product requirements, ADRs, plans, epics, and task backlog
 prototype/  Prototype PRD source documents
+src/app/    Next.js root layout, route, and global foundation styles
 ```
 
 ## Module Overview
@@ -14,9 +15,13 @@ prototype/  Prototype PRD source documents
 |---|---|
 | `docs/` | Defines product scope, decisions, implementation sequence, and acceptance criteria |
 | `prototype/docs/` | Holds the source prototype PRD |
+| `src/app/` | Provides the initial App Router page, layout, metadata, and global CSS |
 
 ## Data Flow
-No runtime application exists yet. The planned flow is: Next.js route/page → provider-neutral content adapter → published CMS content.
+The root request enters the Next.js App Router, renders `src/app/layout.tsx`, and resolves `/` through `src/app/page.tsx`. Future routes will read published content through a provider-neutral adapter.
 
 ## External Dependencies
-No application dependencies are present yet. The planned frontend dependency is Next.js with React and TypeScript; CMS dependencies are deferred to Phase 2.
+| `next` | App Router runtime and production build |
+| `react`, `react-dom` | UI runtime |
+| `vitest`, `jsdom` | Node-based smoke testing |
+| `eslint`, `eslint-config-next` | Static analysis and Next.js conventions |
