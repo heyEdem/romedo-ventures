@@ -22,3 +22,9 @@
 - Added `validateProduct`, `validateCategory`, `validateBranch` schema validators with required-field, slug-format, and visibility checks.
 - Added `validateUniqueSlugs` for cross-record slug uniqueness enforcement.
 - Exported schemas from `src/lib/content/` for CMS and seed-data use.
+
+## 2026-08-31 — Add validation and published queries
+- Added `validateProductCategoryRelationships` to ensure products reference valid categories.
+- Fixed lint error in scope-boundary.test.ts by replacing `require('fs')` with proper imports.
+- Added tests for relationship validation covering valid references, unknown categories, and multiple invalid references.
+- Verified public queries exclude drafts and don't expose stock quantities.
