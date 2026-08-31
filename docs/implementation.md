@@ -25,5 +25,11 @@
 - **Initialization:** Import `createContentAdapter` and pass a `ContentStore` to obtain the public adapter interface.
 - **Non-obvious logic:** The adapter filters out draft records so presentational components never see unpublished content. Branches and contact config are returned without filtering since they have no visibility field.
 
+### CMS schema validation
+- **Entry point:** `src/lib/content/schemas.ts`
+- **Key classes/functions:** `validateProduct`, `validateCategory`, `validateBranch`, `validateUniqueSlugs` — enforce required fields, slug format/unicity, and visibility values.
+- **Initialization:** Import validators to check content before publication or seed-data insertion.
+- **Non-obvious logic:** Slug format is `/^[a-z0-9]+(-[a-z0-9]+)*$/`; images must have at least one entry; `displayOrder` must be non-negative.
+
 ## Configuration
 | `NEXT_PUBLIC_SITE_URL` | `http://localhost:3000` | Public site origin for later canonical URL generation |

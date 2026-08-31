@@ -1,7 +1,7 @@
 # Romedo Ventures Prototype Task Index
 
 **Last Updated:** 2026-08-31  
-**Completed:** 3/24 (12%)  
+**Completed:** 4/24 (17%)  
 **Status:** In Progress
 
 Checkbox states: `[x]` done · `[~]` in progress · `[ ]` pending. Task IDs are `<phase>.<sequence>`.
@@ -11,7 +11,7 @@ Checkbox states: `[x]` done · `[~]` in progress · `[ ]` pending. Task IDs are 
 | Phase | Title | Progress | Status |
 |---|---|---:|---|
 | 1 | Foundation and content boundary | 3/3 | Complete |
-| 2 | CMS content and seed data | 0/3 | Not Started |
+| 2 | CMS content and seed data | 1/3 | In Progress |
 | 3 | Frontend shell and navigation | 0/3 | Not Started |
 | 4 | Catalogue search and filters | 0/3 | Not Started |
 | 5 | Product details and contact links | 0/3 | Not Started |
@@ -41,7 +41,7 @@ Checkbox states: `[x]` done · `[~]` in progress · `[ ]` pending. Task IDs are 
 
 ## Phase 2 — CMS Content and Seed Data
 
-- [ ] 2.1 [Configure CMS schemas](epics/epic-002-cms-content-and-seed-data/tasks/task-001-configure-cms-schemas.md)
+- [x] 2.1 [Configure CMS schemas](epics/epic-002-cms-content-and-seed-data/tasks/task-001-configure-cms-schemas.md)
 - [ ] 2.2 [Add validation and published queries](epics/epic-002-cms-content-and-seed-data/tasks/task-002-add-validation-and-published-queries.md)
 - [ ] 2.3 [Seed marked demo content](epics/epic-002-cms-content-and-seed-data/tasks/task-003-seed-marked-demo-content.md)
 

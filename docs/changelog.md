@@ -17,3 +17,8 @@
 - Created route placeholders for all PRD routes: `/products`, `/products/[slug]`, `/categories`, `/categories/[slug]`, `/about`, `/contact`.
 - Added scope boundary test that rejects prohibited e-commerce labels and dependencies.
 - Completed Phase 1 foundation and content boundary.
+
+## 2026-08-31 — Configure CMS schemas
+- Added `validateProduct`, `validateCategory`, `validateBranch` schema validators with required-field, slug-format, and visibility checks.
+- Added `validateUniqueSlugs` for cross-record slug uniqueness enforcement.
+- Exported schemas from `src/lib/content/` for CMS and seed-data use.
