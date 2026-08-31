@@ -15,6 +15,7 @@ const mixedStore: ContentStore = {
       specifications: {},
       featured: false,
       published: 'published',
+      verificationStatus: 'demo',
     },
     {
       name: 'Draft Phone',
@@ -27,6 +28,7 @@ const mixedStore: ContentStore = {
       specifications: {},
       featured: false,
       published: 'draft',
+      verificationStatus: 'demo',
     },
   ],
   categories: [
@@ -37,6 +39,7 @@ const mixedStore: ContentStore = {
       image: '',
       displayOrder: 1,
       published: 'published',
+      verificationStatus: 'demo',
     },
     {
       name: 'Draft Category',
@@ -45,6 +48,7 @@ const mixedStore: ContentStore = {
       image: '',
       displayOrder: 2,
       published: 'draft',
+      verificationStatus: 'demo',
     },
   ],
   branches: [
@@ -55,6 +59,7 @@ const mixedStore: ContentStore = {
       whatsapp: '+233123456789',
       openingHours: 'Mon-Fri 9-5',
       mapUrl: '',
+      verificationStatus: 'demo',
     },
   ],
   contact: {

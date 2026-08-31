@@ -3,6 +3,7 @@ export type {
   Category,
   ContactConfig,
   Product,
+  VerificationStatus,
   Visibility,
 } from './types';
 
@@ -17,3 +18,5 @@ export {
   validateProductCategoryRelationships,
 } from './schemas';
 export type { ValidationError, ValidationResult } from './schemas';
+
+export { seedStore } from './seed';

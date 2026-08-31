@@ -31,5 +31,11 @@
 - **Initialization:** Import validators to check content before publication or seed-data insertion.
 - **Non-obvious logic:** Slug format is `/^[a-z0-9]+(-[a-z0-9]+)*$/`; images must have at least one entry; `displayOrder` must be non-negative.
 
+### Seed data
+- **Entry point:** `src/lib/content/seed.ts`
+- **Key classes/functions:** `seedStore`, `seedProducts`, `seedCategories`, `seedBranches`, `seedContact` — representative demo content with `VerificationStatus` markers.
+- **Initialization:** Import `seedStore` and pass to `createContentAdapter` for development and testing.
+- **Non-obvious logic:** All seed records are marked `'demo'` or `'placeholder'`; none are `'verified'`. Placeholder phone numbers use `+233XXXXXXXXX`. Every record carries a `verificationNote` identifying it as needing verification before public release.
+
 ## Configuration
 | `NEXT_PUBLIC_SITE_URL` | `http://localhost:3000` | Public site origin for later canonical URL generation |

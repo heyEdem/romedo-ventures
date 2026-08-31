@@ -1,5 +1,7 @@
 export type Visibility = 'draft' | 'published';
 
+export type VerificationStatus = 'verified' | 'demo' | 'placeholder';
+
 export interface Product {
   name: string;
   slug: string;
@@ -12,6 +14,8 @@ export interface Product {
   priceLabel?: string;
   featured: boolean;
   published: Visibility;
+  verificationStatus: VerificationStatus;
+  verificationNote?: string;
 }
 
 export interface Category {
@@ -21,6 +25,8 @@ export interface Category {
   image: string;
   displayOrder: number;
   published: Visibility;
+  verificationStatus: VerificationStatus;
+  verificationNote?: string;
 }
 
 export interface Branch {
@@ -30,6 +36,8 @@ export interface Branch {
   whatsapp: string;
   openingHours: string;
   mapUrl: string;
+  verificationStatus: VerificationStatus;
+  verificationNote?: string;
 }
 
 export interface ContactConfig {

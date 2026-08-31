@@ -21,6 +21,7 @@ function validProduct(overrides: Partial<Product> = {}): Product {
     priceLabel: 'GHS 2,500',
     featured: false,
     published: 'published',
+    verificationStatus: 'demo',
     ...overrides,
   };
 }
@@ -33,6 +34,7 @@ function validCategory(overrides: Partial<Category> = {}): Category {
     image: '/images/smartphones.jpg',
     displayOrder: 1,
     published: 'published',
+    verificationStatus: 'demo',
     ...overrides,
   };
 }
@@ -45,6 +47,7 @@ function validBranch(overrides: Partial<Branch> = {}): Branch {
     whatsapp: '+233123456789',
     openingHours: 'Mon-Sat 9:00-18:00',
     mapUrl: 'https://maps.example.com/accra-main',
+    verificationStatus: 'demo',
     ...overrides,
   };
 }
