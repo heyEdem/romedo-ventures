@@ -1,7 +1,7 @@
 # Romedo Ventures Prototype Task Index
 
 **Last Updated:** 2026-08-31  
-**Completed:** 2/24 (8%)  
+**Completed:** 3/24 (12%)  
 **Status:** In Progress
 
 Checkbox states: `[x]` done · `[~]` in progress · `[ ]` pending. Task IDs are `<phase>.<sequence>`.
@@ -10,7 +10,7 @@ Checkbox states: `[x]` done · `[~]` in progress · `[ ]` pending. Task IDs are 
 
 | Phase | Title | Progress | Status |
 |---|---|---:|---|
-| 1 | Foundation and content boundary | 2/3 | In Progress |
+| 1 | Foundation and content boundary | 3/3 | Complete |
 | 2 | CMS content and seed data | 0/3 | Not Started |
 | 3 | Frontend shell and navigation | 0/3 | Not Started |
 | 4 | Catalogue search and filters | 0/3 | Not Started |
@@ -37,7 +37,7 @@ Checkbox states: `[x]` done · `[~]` in progress · `[ ]` pending. Task IDs are 
 
 - [x] 1.1 [Initialize frontend application](epics/epic-001-foundation-and-content-boundary/tasks/task-001-initialize-frontend-application.md)
 - [x] 1.2 [Define content models and adapter](epics/epic-001-foundation-and-content-boundary/tasks/task-002-define-content-models-and-adapter.md)
-- [ ] 1.3 [Add route skeleton and scope guard](epics/epic-001-foundation-and-content-boundary/tasks/task-003-add-route-skeleton-and-scope-guard.md)
+- [x] 1.3 [Add route skeleton and scope guard](epics/epic-001-foundation-and-content-boundary/tasks/task-003-add-route-skeleton-and-scope-guard.md)
 
 ## Phase 2 — CMS Content and Seed Data
 

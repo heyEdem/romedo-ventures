@@ -12,3 +12,8 @@
 - Added typed content models: Product, Category, Branch, ContactConfig.
 - Implemented `createContentAdapter` with published-only filtering.
 - Added adapter tests verifying draft/published content isolation.
+
+## 2026-08-31 — Add route skeleton and scope guard
+- Created route placeholders for all PRD routes: `/products`, `/products/[slug]`, `/categories`, `/categories/[slug]`, `/about`, `/contact`.
+- Added scope boundary test that rejects prohibited e-commerce labels and dependencies.
+- Completed Phase 1 foundation and content boundary.
