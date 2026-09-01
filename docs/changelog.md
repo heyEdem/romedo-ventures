@@ -53,3 +53,10 @@
 - Integrated search bar into homepage between hero and categories sections.
 - Added search bar styles to globals.css with focus ring and responsive design.
 - Updated task index and implementation docs to reflect task 3.2 completion.
+
+## 2026-09-01 — Build category index and cards
+- Created `CategoryCard` component with image fallback (onError swap to SVG placeholder) and optional product count.
+- Created `ProductCard` component with image fallback, brand label, and price display.
+- Added card CSS system: `.card`, `.card-image`, `.card-body`, `.card-title`, `.card-description`, `.card-price`, `.card-meta`, hover shadow transition.
+- Refactored `/categories`, `/categories/[slug]`, `/products`, and homepage to use shared card components, eliminating duplicated inline card markup.
+- Phase 3 (frontend shell and navigation) is now complete.

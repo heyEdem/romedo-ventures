@@ -1,7 +1,7 @@
 # Romedo Ventures Prototype Task Index
 
 **Last Updated:** 2026-09-01  
-**Completed:** 8/24 (33%)  
+**Completed:** 9/24 (38%)  
 **Status:** In Progress
 
 Checkbox states: `[x]` done · `[~]` in progress · `[ ]` pending. Task IDs are `<phase>.<sequence>`.
@@ -12,7 +12,7 @@ Checkbox states: `[x]` done · `[~]` in progress · `[ ]` pending. Task IDs are 
 |---|---|---:|---|
 | 1 | Foundation and content boundary | 3/3 | Complete |
 | 2 | CMS content and seed data | 3/3 | Complete |
-| 3 | Frontend shell and navigation | 2/3 | In Progress |
+| 3 | Frontend shell and navigation | 3/3 | Complete |
 | 4 | Catalogue search and filters | 0/3 | Not Started |
 | 5 | Product details and contact links | 0/3 | Not Started |
 | 6 | About, locations, and contact | 0/3 | Not Started |
@@ -49,7 +49,7 @@ Checkbox states: `[x]` done · `[~]` in progress · `[ ]` pending. Task IDs are 
 
 - [x] 3.1 [Create design tokens and shell](epics/epic-003-frontend-shell-and-navigation/tasks/task-001-create-design-tokens-and-shell.md)
 - [x] 3.2 [Build homepage sections](epics/epic-003-frontend-shell-and-navigation/tasks/task-002-build-homepage-sections.md)
-- [ ] 3.3 [Build category index and cards](epics/epic-003-frontend-shell-and-navigation/tasks/task-003-build-category-index-and-cards.md)
+- [x] 3.3 [Build category index and cards](epics/epic-003-frontend-shell-and-navigation/tasks/task-003-build-category-index-and-cards.md)
 
 ## Phase 4 — Catalogue Search and Filters
 
