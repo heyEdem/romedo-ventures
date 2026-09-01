@@ -1,5 +1,6 @@
 import { seedStore } from '@/lib/content/seed';
 import { createContentAdapter } from '@/lib/content/adapter';
+import BranchCard from '@/components/branch-card';
 
 export default function AboutPage() {
   const adapter = createContentAdapter(seedStore);
@@ -72,24 +73,7 @@ export default function AboutPage() {
             }}
           >
             {branches.map((branch) => (
-              <div
-                key={branch.name}
-                style={{
-                  padding: 'var(--space-6)',
-                  background: 'var(--color-surface-raised)',
-                  borderRadius: 'var(--radius-xl)',
-                }}
-              >
-                <h3 style={{ fontSize: 'var(--text-lg)', marginBottom: 'var(--space-2)' }}>
-                  {branch.name}
-                </h3>
-                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-text-secondary)', marginBottom: 'var(--space-2)' }}>
-                  {branch.generalLocation}
-                </p>
-                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-text-muted)' }}>
-                  {branch.openingHours}
-                </p>
-              </div>
+              <BranchCard key={branch.name} branch={branch} />
             ))}
           </div>
         </div>

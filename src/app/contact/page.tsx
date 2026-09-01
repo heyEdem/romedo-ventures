@@ -1,6 +1,7 @@
 import { seedStore } from '@/lib/content/seed';
 import { createContentAdapter } from '@/lib/content/adapter';
 import { buildGeneralWhatsAppUrl, buildTelUrl } from '@/lib/contact';
+import BranchCard from '@/components/branch-card';
 
 export default function ContactPage() {
   const adapter = createContentAdapter(seedStore);
@@ -86,39 +87,7 @@ export default function ContactPage() {
             }}
           >
             {branches.map((branch) => (
-              <div
-                key={branch.name}
-                style={{
-                  padding: 'var(--space-6)',
-                  background: 'var(--color-surface-raised)',
-                  borderRadius: 'var(--radius-xl)',
-                }}
-              >
-                <h3 style={{ fontSize: 'var(--text-lg)', marginBottom: 'var(--space-2)' }}>
-                  {branch.name}
-                </h3>
-                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-text-secondary)', marginBottom: 'var(--space-1)' }}>
-                  {branch.generalLocation}
-                </p>
-                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-text-muted)' }}>
-                  {branch.openingHours}
-                </p>
-                {branch.mapUrl && (
-                  <a
-                    href={branch.mapUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    style={{
-                      display: 'inline-block',
-                      marginTop: 'var(--space-3)',
-                      fontSize: 'var(--text-sm)',
-                      color: 'var(--color-primary)',
-                    }}
-                  >
-                    View on map
-                  </a>
-                )}
-              </div>
+              <BranchCard key={branch.name} branch={branch} />
             ))}
           </div>
         </div>
