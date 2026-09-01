@@ -1,7 +1,7 @@
 # Romedo Ventures Prototype Task Index
 
 **Last Updated:** 2026-09-01  
-**Completed:** 13/24 (54%)  
+**Completed:** 16/24 (67%)  
 **Status:** In Progress
 
 Checkbox states: `[x]` done · `[~]` in progress · `[ ]` pending. Task IDs are `<phase>.<sequence>`.
@@ -14,11 +14,11 @@ Checkbox states: `[x]` done · `[~]` in progress · `[ ]` pending. Task IDs are 
 | 2 | CMS content and seed data | 3/3 | Complete |
 | 3 | Frontend shell and navigation | 3/3 | Complete |
 | 4 | Catalogue search and filters | 3/3 | Complete |
-| 5 | Product details and contact links | 0/3 | Not Started |
+| 5 | Product details and contact links | 3/3 | Complete |
 | 6 | About, locations, and contact | 0/3 | Not Started |
 | 7 | Quality, SEO, and mobile QA | 0/3 | Not Started |
 | 8 | Vercel deployment and owner demo | 0/3 | Not Started |
-| **Total** | | **11/24** | **In Progress** |
+| **Total** | | **14/24** | **In Progress** |
 
 ## Source map
 
@@ -60,8 +60,8 @@ Checkbox states: `[x]` done · `[~]` in progress · `[ ]` pending. Task IDs are 
 ## Phase 5 — Product Details and Contact Links
 
 - [x] 5.1 [Build product detail route](epics/epic-005-product-details-and-contact-links/tasks/task-001-build-product-detail-route.md)
-- [ ] 5.2 [Implement contact link utilities](epics/epic-005-product-details-and-contact-links/tasks/task-002-implement-contact-link-utilities.md)
-- [ ] 5.3 [Add product enquiry actions](epics/epic-005-product-details-and-contact-links/tasks/task-003-add-product-enquiry-actions.md)
+- [x] 5.2 [Implement contact link utilities](epics/epic-005-product-details-and-contact-links/tasks/task-002-implement-contact-link-utilities.md)
+- [x] 5.3 [Add product enquiry actions](epics/epic-005-product-details-and-contact-links/tasks/task-003-add-product-enquiry-actions.md)
 
 ## Phase 6 — About, Locations, and Contact
 

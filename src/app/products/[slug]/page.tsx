@@ -81,10 +81,15 @@ export default function ProductDetailPage({
                 target="_blank"
                 rel="noopener noreferrer"
                 className="product-action product-action-whatsapp"
+                aria-label={`Enquire about ${product.name} on WhatsApp`}
               >
                 Ask about this product
               </a>
-              <a href={telUrl} className="product-action product-action-call">
+              <a
+                href={telUrl}
+                className="product-action product-action-call"
+                aria-label={`Call us about ${product.name}`}
+              >
                 Call us
               </a>
             </div>

@@ -94,3 +94,8 @@
 - Added `generateStaticParams` for SSG and `generateMetadata` for SEO on product detail pages.
 - Added product detail CSS: gallery, breadcrumbs, specs grid, action buttons, related products grid.
 - Added `ContactLinkTest` and adapter method tests. All 87 tests pass, production build succeeds.
+
+## 2026-09-01 — Add product enquiry actions
+- Improved product action button touch targets with `min-height: 2.75rem` for mobile accessibility.
+- Added `aria-label` attributes to WhatsApp and call CTAs for screen reader context.
+- Completed Phase 5 (product details and contact links).
