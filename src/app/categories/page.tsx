@@ -1,10 +1,15 @@
 import { seedStore } from '@/lib/content/seed';
 import { createContentAdapter } from '@/lib/content/adapter';
-import Link from 'next/link';
+import CategoryCard from '@/components/category-card';
 
 export default function CategoriesPage() {
   const adapter = createContentAdapter(seedStore);
   const categories = adapter.getPublishedCategories();
+  const products = adapter.getPublishedProducts();
+
+  function productCount(categorySlug: string): number {
+    return products.filter((p) => p.category === categorySlug).length;
+  }
 
   return (
     <section>
@@ -26,25 +31,14 @@ export default function CategoriesPage() {
           }}
         >
           {categories.map((cat) => (
-            <Link
+            <CategoryCard
               key={cat.slug}
-              href={`/categories/${cat.slug}`}
-              style={{
-                display: 'block',
-                padding: 'var(--space-6)',
-                background: 'var(--color-surface-raised)',
-                borderRadius: 'var(--radius-xl)',
-                textDecoration: 'none',
-                color: 'var(--color-text)',
-              }}
-            >
-              <h2 style={{ fontSize: 'var(--text-lg)', marginBottom: 'var(--space-2)' }}>
-                {cat.name}
-              </h2>
-              <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-text-secondary)' }}>
-                {cat.description}
-              </p>
-            </Link>
+              slug={cat.slug}
+              name={cat.name}
+              description={cat.description}
+              image={cat.image}
+              productCount={productCount(cat.slug)}
+            />
           ))}
         </div>
       )}

@@ -1,6 +1,7 @@
 import { seedStore } from '@/lib/content/seed';
 import { createContentAdapter } from '@/lib/content/adapter';
 import Link from 'next/link';
+import ProductCard from '@/components/product-card';
 
 export default function CategoryDetailPage({
   params,
@@ -58,30 +59,15 @@ export default function CategoryDetailPage({
           }}
         >
           {products.map((product) => (
-            <Link
+            <ProductCard
               key={product.slug}
-              href={`/products/${product.slug}`}
-              style={{
-                display: 'block',
-                padding: 'var(--space-6)',
-                background: 'var(--color-surface-raised)',
-                borderRadius: 'var(--radius-xl)',
-                textDecoration: 'none',
-                color: 'var(--color-text)',
-              }}
-            >
-              <h2 style={{ fontSize: 'var(--text-lg)', marginBottom: 'var(--space-2)' }}>
-                {product.name}
-              </h2>
-              <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-text-secondary)' }}>
-                {product.shortDescription}
-              </p>
-              {product.priceLabel && (
-                <p style={{ fontSize: 'var(--text-sm)', fontWeight: 'var(--weight-medium)', marginTop: 'var(--space-2)' }}>
-                  {product.priceLabel}
-                </p>
-              )}
-            </Link>
+              slug={product.slug}
+              name={product.name}
+              shortDescription={product.shortDescription}
+              image={product.images[0] ?? ''}
+              priceLabel={product.priceLabel}
+              brand={product.brand}
+            />
           ))}
         </div>
       )}

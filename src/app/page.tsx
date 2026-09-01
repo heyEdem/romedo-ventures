@@ -2,6 +2,8 @@ import Link from 'next/link';
 import { seedStore } from '@/lib/content/seed';
 import { createContentAdapter } from '@/lib/content/adapter';
 import SearchBar from '@/components/search-bar';
+import CategoryCard from '@/components/category-card';
+import ProductCard from '@/components/product-card';
 
 export const prototypeName = 'Romedo Ventures';
 
@@ -12,6 +14,10 @@ export default function Home() {
   const featured = products.filter((p) => p.featured);
   const branches = adapter.getBranches();
   const { whatsapp, phone } = adapter.getContactConfig();
+
+  function productCount(categorySlug: string): number {
+    return products.filter((p) => p.category === categorySlug).length;
+  }
 
   return (
     <>
@@ -94,26 +100,14 @@ export default function Home() {
             }}
           >
             {categories.map((cat) => (
-              <Link
+              <CategoryCard
                 key={cat.slug}
-                href={`/categories/${cat.slug}`}
-                style={{
-                  display: 'block',
-                  padding: 'var(--space-6)',
-                  background: 'var(--color-surface-raised)',
-                  borderRadius: 'var(--radius-xl)',
-                  textDecoration: 'none',
-                  color: 'var(--color-text)',
-                  transition: 'box-shadow var(--transition-base)',
-                }}
-              >
-                <h3 style={{ fontSize: 'var(--text-lg)', marginBottom: 'var(--space-2)' }}>
-                  {cat.name}
-                </h3>
-                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-text-secondary)' }}>
-                  {cat.description}
-                </p>
-              </Link>
+                slug={cat.slug}
+                name={cat.name}
+                description={cat.description}
+                image={cat.image}
+                productCount={productCount(cat.slug)}
+              />
             ))}
           </div>
         </section>
@@ -138,31 +132,15 @@ export default function Home() {
             }}
           >
             {featured.map((product) => (
-              <Link
+              <ProductCard
                 key={product.slug}
-                href={`/products/${product.slug}`}
-                style={{
-                  display: 'block',
-                  padding: 'var(--space-6)',
-                  background: 'var(--color-surface-raised)',
-                  borderRadius: 'var(--radius-xl)',
-                  textDecoration: 'none',
-                  color: 'var(--color-text)',
-                  transition: 'box-shadow var(--transition-base)',
-                }}
-              >
-                <h3 style={{ fontSize: 'var(--text-lg)', marginBottom: 'var(--space-2)' }}>
-                  {product.name}
-                </h3>
-                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-text-secondary)' }}>
-                  {product.shortDescription}
-                </p>
-                {product.priceLabel && (
-                  <p style={{ fontSize: 'var(--text-sm)', fontWeight: 'var(--weight-medium)', marginTop: 'var(--space-2)' }}>
-                    {product.priceLabel}
-                  </p>
-                )}
-              </Link>
+                slug={product.slug}
+                name={product.name}
+                shortDescription={product.shortDescription}
+                image={product.images[0] ?? ''}
+                priceLabel={product.priceLabel}
+                brand={product.brand}
+              />
             ))}
           </div>
         </section>
