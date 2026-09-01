@@ -1,7 +1,7 @@
 # PLAN-006: About, Locations, and Contact
 
 **Date:** 2026-08-31  
-**Status:** Todo  
+**Status:** In Progress  
 **Implements:** ADR-004, ADR-002  
 **Estimated complexity:** Small
 
@@ -18,9 +18,9 @@ Provide trustworthy business information and obvious contact paths without inven
 
 ## Acceptance criteria
 
-- [ ] `BusinessInfoTest.rendersOnlySuppliedFacts`: absent facts are not replaced with invented content.
-- [ ] `ContactPageTest.exposesWhatsAppAndTelephoneActions`: both configured actions are visible and usable.
-- [ ] `ConversionCopyTest.containsNoPurchaseCtas`: all public routes omit prohibited purchase labels.
+- [x] `BusinessInfoTest.rendersOnlySuppliedFacts`: absent facts are not replaced with invented content.
+- [x] `ContactPageTest.exposesWhatsAppAndTelephoneActions`: both configured actions are visible and usable.
+- [x] `ConversionCopyTest.containsNoPurchaseCtas`: all public routes omit prohibited purchase labels.
 
 ## Out of scope
 

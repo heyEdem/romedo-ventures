@@ -1,7 +1,7 @@
 # Romedo Ventures Prototype Task Index
 
 **Last Updated:** 2026-09-01  
-**Completed:** 16/24 (67%)  
+**Completed:** 15/24 (63%)  
 **Status:** In Progress
 
 Checkbox states: `[x]` done · `[~]` in progress · `[ ]` pending. Task IDs are `<phase>.<sequence>`.
@@ -15,10 +15,10 @@ Checkbox states: `[x]` done · `[~]` in progress · `[ ]` pending. Task IDs are 
 | 3 | Frontend shell and navigation | 3/3 | Complete |
 | 4 | Catalogue search and filters | 3/3 | Complete |
 | 5 | Product details and contact links | 3/3 | Complete |
-| 6 | About, locations, and contact | 0/3 | Not Started |
+| 6 | About, locations, and contact | 1/3 | In Progress |
 | 7 | Quality, SEO, and mobile QA | 0/3 | Not Started |
 | 8 | Vercel deployment and owner demo | 0/3 | Not Started |
-| **Total** | | **14/24** | **In Progress** |
+| **Total** | | **15/24** | **In Progress** |
 
 ## Source map
 
@@ -65,7 +65,7 @@ Checkbox states: `[x]` done · `[~]` in progress · `[ ]` pending. Task IDs are 
 
 ## Phase 6 — About, Locations, and Contact
 
-- [ ] 6.1 [Build about page](epics/epic-006-about-locations-and-contact/tasks/task-001-build-about-page.md)
+- [x] 6.1 [Build about page](epics/epic-006-about-locations-and-contact/tasks/task-001-build-about-page.md)
 - [ ] 6.2 [Build locations and branch cards](epics/epic-006-about-locations-and-contact/tasks/task-002-build-locations-and-branch-cards.md)
 - [ ] 6.3 [Build contact page](epics/epic-006-about-locations-and-contact/tasks/task-003-build-contact-page.md)
 

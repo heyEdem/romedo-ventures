@@ -9,7 +9,7 @@ Publish verified business information and shared contact surfaces.
 
 ## Tasks
 
-- [ ] 6.1 [Build about page with verified content](tasks/task-001-build-about-page.md)
+- [x] 6.1 [Build about page with verified content](tasks/task-001-build-about-page.md)
 - [ ] 6.2 [Build locations and branch cards](tasks/task-002-build-locations-and-branch-cards.md)
 - [ ] 6.3 [Build contact page and missing-data fallbacks](tasks/task-003-build-contact-page.md)
 
