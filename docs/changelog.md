@@ -47,3 +47,9 @@
 - Added vitest path alias config for `@/` imports.
 - Added `shell.test.ts` with NavigationTest, HomepageTest, ResponsiveSmokeTest, and ShellStructureTest (19 tests).
 - All 63 tests pass, lint clean, production build succeeds.
+
+## 2026-09-01 — Build homepage sections
+- Added `SearchBar` client component with search input and form submission to `/products?q=...`.
+- Integrated search bar into homepage between hero and categories sections.
+- Added search bar styles to globals.css with focus ring and responsive design.
+- Updated task index and implementation docs to reflect task 3.2 completion.

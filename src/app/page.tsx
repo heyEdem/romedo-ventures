@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { seedStore } from '@/lib/content/seed';
 import { createContentAdapter } from '@/lib/content/adapter';
+import SearchBar from '@/components/search-bar';
 
 export const prototypeName = 'Romedo Ventures';
 
@@ -68,6 +69,10 @@ export default function Home() {
             WhatsApp Us
           </a>
         </div>
+      </section>
+
+      <section style={{ marginBottom: 'var(--space-12)' }}>
+        <SearchBar />
       </section>
 
       {categories.length > 0 && (

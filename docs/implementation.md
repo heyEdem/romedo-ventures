@@ -5,6 +5,7 @@
 - `src/app/page.tsx` — `/` route homepage with categories, featured products, locations, and CTAs.
 - `src/components/header.tsx` — Responsive header with desktop nav and mobile slide-out menu.
 - `src/components/footer.tsx` — Footer with navigation links and copyright.
+- `src/components/search-bar.tsx` — Client search input that navigates to `/products?q=...` on submit.
 - `src/app/globals.css` — Design tokens and layout primitives.
 - `package.json` — Development, test, lint, and production scripts.
 
@@ -45,6 +46,12 @@
 - **Key classes/functions:** `Header` (responsive nav with mobile menu), `Footer` (navigation links and copyright).
 - **Initialization:** Imported by `src/app/layout.tsx` and rendered on every page.
 - **Non-obvious logic:** Header uses `usePathname` to set `aria-current="page"` on active links. Mobile menu uses `data-open` attribute with CSS transitions for slide-out behavior.
+
+### Search bar
+- **Entry point:** `src/components/search-bar.tsx`
+- **Key classes/functions:** `SearchBar` — client component with form submission that navigates to `/products?q=...`.
+- **Initialization:** Imported by `src/app/page.tsx` and rendered between the hero and categories sections.
+- **Non-obvious logic:** Empty queries redirect to `/products` without a query parameter. Uses `useRouter` from `next/navigation` for client-side navigation.
 
 ### Design tokens
 - **Entry point:** `src/app/globals.css`
