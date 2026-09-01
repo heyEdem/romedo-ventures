@@ -1,7 +1,7 @@
 # Romedo Ventures Prototype Task Index
 
 **Last Updated:** 2026-09-01  
-**Completed:** 11/24 (46%)  
+**Completed:** 12/24 (50%)  
 **Status:** In Progress
 
 Checkbox states: `[x]` done · `[~]` in progress · `[ ]` pending. Task IDs are `<phase>.<sequence>`.
@@ -13,12 +13,12 @@ Checkbox states: `[x]` done · `[~]` in progress · `[ ]` pending. Task IDs are 
 | 1 | Foundation and content boundary | 3/3 | Complete |
 | 2 | CMS content and seed data | 3/3 | Complete |
 | 3 | Frontend shell and navigation | 3/3 | Complete |
-| 4 | Catalogue search and filters | 2/3 | In Progress |
+| 4 | Catalogue search and filters | 3/3 | Complete |
 | 5 | Product details and contact links | 0/3 | Not Started |
 | 6 | About, locations, and contact | 0/3 | Not Started |
 | 7 | Quality, SEO, and mobile QA | 0/3 | Not Started |
 | 8 | Vercel deployment and owner demo | 0/3 | Not Started |
-| **Total** | | **9/24** | **In Progress** |
+| **Total** | | **10/24** | **In Progress** |
 
 ## Source map
 
@@ -55,7 +55,7 @@ Checkbox states: `[x]` done · `[~]` in progress · `[ ]` pending. Task IDs are 
 
 - [x] 4.1 [Implement product catalogue query](epics/epic-004-catalogue-search-and-filters/tasks/task-001-implement-product-catalogue-query.md)
 - [x] 4.2 [Add filters and clear state](epics/epic-004-catalogue-search-and-filters/tasks/task-002-add-filters-and-clear-state.md)
-- [ ] 4.3 [Add catalogue states](epics/epic-004-catalogue-search-and-filters/tasks/task-003-add-catalogue-states.md)
+- [x] 4.3 [Add catalogue states](epics/epic-004-catalogue-search-and-filters/tasks/task-003-add-catalogue-states.md)
 
 ## Phase 5 — Product Details and Contact Links
 

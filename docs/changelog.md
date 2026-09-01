@@ -74,3 +74,12 @@
 - Added filter bar CSS: `.filter-bar`, `.filter-group`, `.filter-select`, `.filter-clear` with responsive stacking on mobile.
 - Added `ProductFiltersTest` covering category, brand, combined filters, no-filter passthrough, and brand extraction.
 - All 73 tests pass, lint clean, production build succeeds.
+
+## 2026-09-01 — Add catalogue states
+- Created `loading.tsx` with animated skeleton cards, filter bar placeholder, and screen-reader loading announcement.
+- Created `error.tsx` client error boundary with "Try again" reset action and homepage link.
+- Enhanced empty state with icon, contextual messaging, and recovery actions (clear filters / homepage).
+- Added `Pagination` client component with page buttons, ellipsis, prev/next, and URL param preservation.
+- Products page now shows "Showing X–Y of Z results" and paginates at 12 per page.
+- Added CSS for skeleton animation, empty-state, error-state, retry-button, and pagination-button.
+- Phase 4 (catalogue search and filters) is now complete.
