@@ -83,3 +83,14 @@
 - Products page now shows "Showing X–Y of Z results" and paginates at 12 per page.
 - Added CSS for skeleton animation, empty-state, error-state, retry-button, and pagination-button.
 - Phase 4 (catalogue search and filters) is now complete.
+
+## 2026-09-01 — Build product detail route
+- Rewrote `/products/[slug]` with image gallery, thumbnail selector, breadcrumbs with category context, specifications grid, price display, availability disclaimer, and WhatsApp/phone CTAs.
+- Created `ProductGallery` client component with active image state, thumbnail navigation, and fallback on image error.
+- Created `RelatedProducts` client component showing same-category products.
+- Added `getProductBySlug`, `getRelatedProducts`, and `getCategoryBySlug` methods to `ContentAdapter`.
+- Created `src/lib/contact.ts` with `buildWhatsAppUrl`, `buildTelUrl`, and `buildGeneralWhatsAppUrl` utilities.
+- Added `not-found.tsx` for invalid product slugs with recovery link.
+- Added `generateStaticParams` for SSG and `generateMetadata` for SEO on product detail pages.
+- Added product detail CSS: gallery, breadcrumbs, specs grid, action buttons, related products grid.
+- Added `ContactLinkTest` and adapter method tests. All 87 tests pass, production build succeeds.

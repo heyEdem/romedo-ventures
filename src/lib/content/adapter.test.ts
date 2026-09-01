@@ -101,6 +101,82 @@ describe('ContentAdapterTest', () => {
     expect(contact.whatsapp).toBe('+233123456789');
     expect(contact.phone).toBe('+233123456789');
   });
+
+  it('getProductBySlug returns published product', () => {
+    const adapter = createContentAdapter(mixedStore);
+    const product = adapter.getProductBySlug('published-phone');
+    expect(product).toBeDefined();
+    expect(product!.name).toBe('Published Phone');
+  });
+
+  it('getProductBySlug returns undefined for draft', () => {
+    const adapter = createContentAdapter(mixedStore);
+    const product = adapter.getProductBySlug('draft-phone');
+    expect(product).toBeUndefined();
+  });
+
+  it('getProductBySlug returns undefined for unknown slug', () => {
+    const adapter = createContentAdapter(mixedStore);
+    const product = adapter.getProductBySlug('nonexistent');
+    expect(product).toBeUndefined();
+  });
+
+  it('getRelatedProducts returns same-category products', () => {
+    const storeWithMany: ContentStore = {
+      ...mixedStore,
+      products: [
+        ...mixedStore.products,
+        {
+          name: 'Another Phone',
+          slug: 'another-phone',
+          category: 'phones',
+          brand: 'BrandC',
+          shortDescription: 'Another published phone',
+          description: 'Full description',
+          images: [],
+          specifications: {},
+          featured: false,
+          published: 'published',
+          verificationStatus: 'demo',
+        },
+      ],
+    };
+    const adapter = createContentAdapter(storeWithMany);
+    const related = adapter.getRelatedProducts('published-phone');
+    expect(related).toHaveLength(1);
+    expect(related[0].slug).toBe('another-phone');
+  });
+
+  it('getRelatedProducts excludes the product itself', () => {
+    const adapter = createContentAdapter(mixedStore);
+    const related = adapter.getRelatedProducts('published-phone');
+    expect(related.every((p) => p.slug !== 'published-phone')).toBe(true);
+  });
+
+  it('getRelatedProducts excludes draft products', () => {
+    const adapter = createContentAdapter(mixedStore);
+    const related = adapter.getRelatedProducts('published-phone');
+    expect(related.every((p) => p.published === 'published')).toBe(true);
+  });
+
+  it('getRelatedProducts returns empty for unknown slug', () => {
+    const adapter = createContentAdapter(mixedStore);
+    const related = adapter.getRelatedProducts('nonexistent');
+    expect(related).toHaveLength(0);
+  });
+
+  it('getCategoryBySlug returns published category', () => {
+    const adapter = createContentAdapter(mixedStore);
+    const category = adapter.getCategoryBySlug('published-category');
+    expect(category).toBeDefined();
+    expect(category!.name).toBe('Published Category');
+  });
+
+  it('getCategoryBySlug returns undefined for draft', () => {
+    const adapter = createContentAdapter(mixedStore);
+    const category = adapter.getCategoryBySlug('draft-category');
+    expect(category).toBeUndefined();
+  });
 });
 
 describe('ArchitectureBoundaryTest', () => {

@@ -14,10 +14,13 @@ export interface ProductFilters {
 
 export interface ContentAdapter {
   getPublishedProducts(): Product[];
+  getProductBySlug(slug: string): Product | undefined;
+  getRelatedProducts(slug: string, limit?: number): Product[];
   searchProducts(query: string): Product[];
   filterProducts(filters: ProductFilters): Product[];
   getBrands(): string[];
   getPublishedCategories(): Category[];
+  getCategoryBySlug(slug: string): Category | undefined;
   getBranches(): Branch[];
   getContactConfig(): ContactConfig;
 }
@@ -51,6 +54,17 @@ export function createContentAdapter(store: ContentStore): ContentAdapter {
     getPublishedProducts() {
       return filterPublished(store.products);
     },
+    getProductBySlug(slug: string) {
+      return filterPublished(store.products).find((p) => p.slug === slug);
+    },
+    getRelatedProducts(slug: string, limit = 4) {
+      const published = filterPublished(store.products);
+      const current = published.find((p) => p.slug === slug);
+      if (!current) return [];
+      return published
+        .filter((p) => p.slug !== slug && p.category === current.category)
+        .slice(0, limit);
+    },
     searchProducts(query: string) {
       const published = filterPublished(store.products);
       if (!query.trim()) return published;
@@ -71,6 +85,9 @@ export function createContentAdapter(store: ContentStore): ContentAdapter {
     },
     getPublishedCategories() {
       return filterPublished(store.categories);
+    },
+    getCategoryBySlug(slug: string) {
+      return filterPublished(store.categories).find((c) => c.slug === slug);
     },
     getBrands() {
       const published = filterPublished(store.products);

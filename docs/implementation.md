@@ -65,6 +65,18 @@
 - **Initialization:** Server component reads `searchParams`, passes filters to adapter's `filterProducts`.
 - **Non-obvious logic:** Empty or whitespace-only queries return all published products. Category and brand filters are exact-match. Filters compose with each other and with search. Draft products are excluded from all results.
 
+### Product detail route
+- **Entry point:** `src/app/products/[slug]/page.tsx`, `src/app/products/[slug]/product-gallery.tsx`, `src/app/products/[slug]/related-products.tsx`, `src/app/products/[slug]/not-found.tsx`
+- **Key classes/functions:** `ProductDetailPage` — server component rendering product gallery, info, specs, description, and related products. `ProductGallery` — client component with image state, thumbnail navigation, and error fallback. `RelatedProducts` — client component showing same-category product cards.
+- **Initialization:** Server component uses `generateStaticParams` for SSG and `generateMetadata` for per-product SEO. Calls `notFound()` for missing slugs.
+- **Non-obvious logic:** Gallery manages `activeIndex` and `imgError` state per instance. Related products are limited to same category, excluding the current product. Breadcrumbs resolve category name from slug.
+
+### Contact link utilities
+- **Entry point:** `src/lib/contact.ts`
+- **Key classes/functions:** `buildWhatsAppUrl(phone, productName)` — returns encoded WhatsApp deep link with product-specific enquiry message. `buildTelUrl(phone)` — returns `tel:` URL. `buildGeneralWhatsAppUrl(contact)` — returns WhatsApp link using default message.
+- **Initialization:** Import utilities in server or client components that render contact CTAs.
+- **Non-obvious logic:** Phone numbers are stripped of non-numeric characters for WhatsApp URL format. Messages are URL-encoded for safe embedding in query strings.
+
 ### Design tokens
 - **Entry point:** `src/app/globals.css`
 - **Key classes/functions:** CSS custom properties for colors, typography, spacing, breakpoints, radius, shadows, and focus rings.
