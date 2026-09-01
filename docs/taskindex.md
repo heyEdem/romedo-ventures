@@ -1,7 +1,7 @@
 # Romedo Ventures Prototype Task Index
 
 **Last Updated:** 2026-09-01  
-**Completed:** 16/24 (67%)  
+**Completed:** 17/24 (71%)  
 **Status:** In Progress
 
 Checkbox states: `[x]` done · `[~]` in progress · `[ ]` pending. Task IDs are `<phase>.<sequence>`.
@@ -15,7 +15,7 @@ Checkbox states: `[x]` done · `[~]` in progress · `[ ]` pending. Task IDs are 
 | 3 | Frontend shell and navigation | 3/3 | Complete |
 | 4 | Catalogue search and filters | 3/3 | Complete |
 | 5 | Product details and contact links | 3/3 | Complete |
-| 6 | About, locations, and contact | 2/3 | In Progress |
+| 6 | About, locations, and contact | 3/3 | Complete |
 | 7 | Quality, SEO, and mobile QA | 0/3 | Not Started |
 | 8 | Vercel deployment and owner demo | 0/3 | Not Started |
 | **Total** | | **16/24** | **In Progress** |
@@ -67,7 +67,7 @@ Checkbox states: `[x]` done · `[~]` in progress · `[ ]` pending. Task IDs are 
 
 - [x] 6.1 [Build about page](epics/epic-006-about-locations-and-contact/tasks/task-001-build-about-page.md)
 - [x] 6.2 [Build locations and branch cards](epics/epic-006-about-locations-and-contact/tasks/task-002-build-locations-and-branch-cards.md)
-- [ ] 6.3 [Build contact page](epics/epic-006-about-locations-and-contact/tasks/task-003-build-contact-page.md)
+- [x] 6.3 [Build contact page](epics/epic-006-about-locations-and-contact/tasks/task-003-build-contact-page.md)
 
 ## Phase 7 — Quality, SEO, and Mobile QA
 
@@ -97,3 +97,4 @@ Checkbox states: `[x]` done · `[~]` in progress · `[ ]` pending. Task IDs are 
 |---|---|
 | 2026-08-31 | Initial task index generated from `prototype/docs/prototype-prd.md` using the five-questions workflow. |
 | 2026-09-01 | Task 6.2 complete: BranchCard component with name, location, phone, WhatsApp, hours, and map link. Omits absent values. |
+| 2026-09-01 | Task 6.3 complete: Contact page with shared WhatsApp/phone CTAs, BranchCard rendering, and graceful missing-data behavior. |

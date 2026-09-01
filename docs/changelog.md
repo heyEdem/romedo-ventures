@@ -99,3 +99,10 @@
 - Improved product action button touch targets with `min-height: 2.75rem` for mobile accessibility.
 - Added `aria-label` attributes to WhatsApp and call CTAs for screen reader context.
 - Completed Phase 5 (product details and contact links).
+
+## 2026-09-01 — Build contact page
+- Contact page uses shared `buildGeneralWhatsAppUrl` and `buildTelUrl` utilities from `src/lib/contact.ts`.
+- Renders WhatsApp and Call CTAs from adapter contact config without duplicating numbers.
+- Displays branch locations via `BranchCard` component with graceful omission of absent data.
+- Added `ContactPageTest` with 7 tests covering shared actions, config usage, and missing-data handling.
+- Phase 6 (about, locations, and contact) is now complete.
