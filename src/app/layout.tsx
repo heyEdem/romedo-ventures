@@ -20,8 +20,11 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <div className="page-wrapper">
+          <a href="#main-content" className="skip-link">
+            Skip to content
+          </a>
           <Header whatsapp={contact.whatsapp} phone={contact.phone} />
-          <main className="page-content">{children}</main>
+          <main id="main-content" className="page-content">{children}</main>
           <Footer />
         </div>
       </body>

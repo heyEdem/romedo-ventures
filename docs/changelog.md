@@ -106,3 +106,13 @@
 - Displays branch locations via `BranchCard` component with graceful omission of absent data.
 - Added `ContactPageTest` with 7 tests covering shared actions, config usage, and missing-data handling.
 - Phase 6 (about, locations, and contact) is now complete.
+
+## 2026-09-01 — Complete accessibility and responsive polish
+- Added skip-to-content link with `skip-link` styles and `#main-content` target.
+- Added `prefers-reduced-motion: reduce` media query to disable animations and transitions.
+- Added Escape key handler to close mobile nav and return focus to toggle button.
+- Added `aria-hidden="true"` to all decorative SVGs in header, pagination, and search bar.
+- Added distinguishing `aria-label` to branch card WhatsApp/Call links (includes branch name).
+- Wrapped category detail breadcrumb in `<nav aria-label="Breadcrumb">` with `aria-current="page"`.
+- Added 18 accessibility smoke tests covering skip link, landmarks, labels, keyboard, SVGs, and reduced motion.
+- All 133 tests pass, production build succeeds.

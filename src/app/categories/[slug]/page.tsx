@@ -33,11 +33,13 @@ export default function CategoryDetailPage({
 
   return (
     <section>
-      <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-text-muted)', marginBottom: 'var(--space-2)' }}>
-        <Link href="/categories" style={{ color: 'var(--color-primary)' }}>Categories</Link>
-        {' / '}
-        {category.name}
-      </p>
+      <nav aria-label="Breadcrumb" style={{ marginBottom: 'var(--space-2)' }}>
+        <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-text-muted)' }}>
+          <Link href="/categories" style={{ color: 'var(--color-primary)' }}>Categories</Link>
+          {' / '}
+          <span aria-current="page">{category.name}</span>
+        </p>
+      </nav>
 
       <h1 style={{ fontSize: 'var(--text-3xl)', marginBottom: 'var(--space-2)' }}>
         {category.name}

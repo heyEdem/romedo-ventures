@@ -16,9 +16,9 @@ Checkbox states: `[x]` done · `[~]` in progress · `[ ]` pending. Task IDs are 
 | 4 | Catalogue search and filters | 3/3 | Complete |
 | 5 | Product details and contact links | 3/3 | Complete |
 | 6 | About, locations, and contact | 3/3 | Complete |
-| 7 | Quality, SEO, and mobile QA | 0/3 | Not Started |
+| 7 | Quality, SEO, and mobile QA | 1/3 | In Progress |
 | 8 | Vercel deployment and owner demo | 0/3 | Not Started |
-| **Total** | | **16/24** | **In Progress** |
+| **Total** | | **17/24** | **In Progress** |
 
 ## Source map
 
@@ -71,7 +71,7 @@ Checkbox states: `[x]` done · `[~]` in progress · `[ ]` pending. Task IDs are 
 
 ## Phase 7 — Quality, SEO, and Mobile QA
 
-- [ ] 7.1 [Complete accessibility and responsive polish](epics/epic-007-quality-seo-and-mobile-qa/tasks/task-001-complete-accessibility-and-responsive-polish.md)
+- [x] 7.1 [Complete accessibility and responsive polish](epics/epic-007-quality-seo-and-mobile-qa/tasks/task-001-complete-accessibility-and-responsive-polish.md)
 - [ ] 7.2 [Optimize images and loading](epics/epic-007-quality-seo-and-mobile-qa/tasks/task-002-optimize-images-and-loading.md)
 - [ ] 7.3 [Add SEO metadata and mobile QA](epics/epic-007-quality-seo-and-mobile-qa/tasks/task-003-add-seo-metadata-and-mobile-qa.md)
 
@@ -98,3 +98,4 @@ Checkbox states: `[x]` done · `[~]` in progress · `[ ]` pending. Task IDs are 
 | 2026-08-31 | Initial task index generated from `prototype/docs/prototype-prd.md` using the five-questions workflow. |
 | 2026-09-01 | Task 6.2 complete: BranchCard component with name, location, phone, WhatsApp, hours, and map link. Omits absent values. |
 | 2026-09-01 | Task 6.3 complete: Contact page with shared WhatsApp/phone CTAs, BranchCard rendering, and graceful missing-data behavior. |
+| 2026-09-01 | Task 7.1 complete: Skip-to-content link, prefers-reduced-motion, Escape key for mobile nav, aria-hidden on SVGs, branch card aria-labels, breadcrumb nav, 18 accessibility smoke tests. |

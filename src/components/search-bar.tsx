@@ -31,7 +31,7 @@ export default function SearchBar() {
         onChange={(e) => setQuery(e.target.value)}
       />
       <button className="search-bar-button" type="submit" aria-label="Search">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="20" height="20">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="20" height="20" aria-hidden="true">
           <circle cx="11" cy="11" r="8" />
           <path d="M21 21l-4.35-4.35" />
         </svg>

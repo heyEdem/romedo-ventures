@@ -122,3 +122,97 @@ describe('ShellStructureTest', () => {
     expect(footer).toContain('role="contentinfo"');
   });
 });
+
+describe('AccessibilitySmokeTest', () => {
+  it('layout includes skip-to-content link', () => {
+    const layout = readFile('app/layout.tsx');
+    expect(layout).toContain('Skip to content');
+    expect(layout).toContain('#main-content');
+    expect(layout).toContain('skip-link');
+  });
+
+  it('layout wraps main content with id for skip link target', () => {
+    const layout = readFile('app/layout.tsx');
+    expect(layout).toContain('id="main-content"');
+  });
+
+  it('header nav has accessible labels', () => {
+    const header = readFile('components/header.tsx');
+    expect(header).toContain('aria-label="Main navigation"');
+    expect(header).toContain('aria-label="Mobile navigation"');
+  });
+
+  it('header menu toggle has aria-label and aria-expanded', () => {
+    const header = readFile('components/header.tsx');
+    expect(header).toContain('aria-label="Open navigation menu"');
+    expect(header).toContain('aria-expanded');
+  });
+
+  it('header close button has aria-label', () => {
+    const header = readFile('components/header.tsx');
+    expect(header).toContain('aria-label="Close navigation menu"');
+  });
+
+  it('header handles Escape key to close mobile nav', () => {
+    const header = readFile('components/header.tsx');
+    expect(header).toContain("e.key === 'Escape'");
+  });
+
+  it('header SVGs have aria-hidden', () => {
+    const header = readFile('components/header.tsx');
+    expect(header).toContain('aria-hidden="true"');
+  });
+
+  it('search form has role="search" and label', () => {
+    const search = readFile('components/search-bar.tsx');
+    expect(search).toContain('role="search"');
+    expect(search).toContain('htmlFor="home-search"');
+    expect(search).toContain('type="search"');
+  });
+
+  it('search button SVG has aria-hidden', () => {
+    const search = readFile('components/search-bar.tsx');
+    expect(search).toContain('aria-hidden="true"');
+  });
+
+  it('pagination nav has accessible label', () => {
+    const pagination = readFile('components/pagination.tsx');
+    expect(pagination).toContain('aria-label="Product pages"');
+    expect(pagination).toContain('aria-label="Previous page"');
+    expect(pagination).toContain('aria-label="Next page"');
+  });
+
+  it('pagination SVGs have aria-hidden', () => {
+    const pagination = readFile('components/pagination.tsx');
+    const svgCount = (pagination.match(/aria-hidden="true"/g) ?? []).length;
+    expect(svgCount).toBeGreaterThanOrEqual(2);
+  });
+
+  it('branch card action links have distinguishing aria-label', () => {
+    const branchCard = readFile('components/branch-card.tsx');
+    expect(branchCard).toContain('aria-label={`WhatsApp ${branch.name}`}');
+    expect(branchCard).toContain('aria-label={`Call ${branch.name}`}');
+  });
+
+  it('category detail page breadcrumb is in nav element', () => {
+    const categoryPage = readFile('app/categories/[slug]/page.tsx');
+    expect(categoryPage).toContain('aria-label="Breadcrumb"');
+    expect(categoryPage).toContain('aria-current="page"');
+  });
+
+  it('globals.css includes prefers-reduced-motion', () => {
+    const css = readFile('app/globals.css');
+    expect(css).toContain('prefers-reduced-motion: reduce');
+    expect(css).toContain('animation-duration: 0.01ms');
+  });
+
+  it('globals.css includes skip-link styles', () => {
+    const css = readFile('app/globals.css');
+    expect(css).toContain('.skip-link');
+  });
+
+  it('globals.css includes sr-only utility', () => {
+    const css = readFile('app/globals.css');
+    expect(css).toContain('.sr-only');
+  });
+});

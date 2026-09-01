@@ -35,6 +35,7 @@ export default function BranchCard({ branch }: BranchCardProps) {
                 rel="noopener noreferrer"
                 className="product-action product-action-whatsapp"
                 style={{ fontSize: 'var(--text-xs)', padding: 'var(--space-2) var(--space-4)' }}
+                aria-label={`WhatsApp ${branch.name}`}
               >
                 WhatsApp
               </a>
@@ -44,6 +45,7 @@ export default function BranchCard({ branch }: BranchCardProps) {
                 href={telUrl}
                 className="product-action product-action-call"
                 style={{ fontSize: 'var(--text-xs)', padding: 'var(--space-2) var(--space-4)' }}
+                aria-label={`Call ${branch.name}`}
               >
                 Call
               </a>
