@@ -53,11 +53,17 @@
 - **Initialization:** Imported by `src/app/page.tsx` and rendered between the hero and categories sections.
 - **Non-obvious logic:** Empty queries redirect to `/products` without a query parameter. Uses `useRouter` from `next/navigation` for client-side navigation.
 
+### Filter bar
+- **Entry point:** `src/components/filter-bar.tsx`
+- **Key classes/functions:** `FilterBar` — client component with category and brand dropdowns driven by URL search params. Supports clear-all action.
+- **Initialization:** Imported by `src/app/products/page.tsx` and rendered above the product grid.
+- **Non-obvious logic:** Filters update URL params (`category`, `brand`) and clear `page` param if present. Uses `useTransition` for non-blocking navigation. "Clear filters" preserves existing `q` param.
+
 ### Product catalogue search
 - **Entry point:** `src/app/products/page.tsx`, `src/lib/content/adapter.ts`
-- **Key classes/functions:** `ContentAdapter.searchProducts(query)` — returns published products matching name, brand, shortDescription, or description. Products page consumes `searchParams.q` to display filtered or full results.
-- **Initialization:** Server component reads `searchParams`, passes query to adapter's `searchProducts`.
-- **Non-obvious logic:** Empty or whitespace-only queries return all published products. Case-insensitive matching across four text fields. Draft products are excluded from results.
+- **Key classes/functions:** `ContentAdapter.searchProducts(query)` — returns published products matching name, brand, shortDescription, or description. `ContentAdapter.filterProducts(filters)` — filters by query, category, and brand. `ContentAdapter.getBrands()` — returns sorted unique brand names. Products page consumes `searchParams.q`, `searchParams.category`, and `searchParams.brand` to display filtered or full results.
+- **Initialization:** Server component reads `searchParams`, passes filters to adapter's `filterProducts`.
+- **Non-obvious logic:** Empty or whitespace-only queries return all published products. Category and brand filters are exact-match. Filters compose with each other and with search. Draft products are excluded from all results.
 
 ### Design tokens
 - **Entry point:** `src/app/globals.css`

@@ -66,3 +66,11 @@
 - Updated `/products` page to accept `searchParams.q` and display filtered results with result count.
 - Added `CatalogueSearchTest` covering name, brand, description, empty query, and draft exclusion.
 - All 68 tests pass, lint clean.
+
+## 2026-09-01 — Add filters and clear state
+- Added `filterProducts(filters)` and `getBrands()` methods to `ContentAdapter` for category, brand, and combined filtering.
+- Created `FilterBar` client component with category/brand dropdowns, active state from URL params, and "Clear filters" button.
+- Updated `/products` page to accept `category` and `brand` search params, pass them to the adapter, and render FilterBar.
+- Added filter bar CSS: `.filter-bar`, `.filter-group`, `.filter-select`, `.filter-clear` with responsive stacking on mobile.
+- Added `ProductFiltersTest` covering category, brand, combined filters, no-filter passthrough, and brand extraction.
+- All 73 tests pass, lint clean, production build succeeds.

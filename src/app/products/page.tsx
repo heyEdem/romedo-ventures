@@ -1,6 +1,7 @@
 import { seedStore } from '@/lib/content/seed';
 import { createContentAdapter } from '@/lib/content/adapter';
 import ProductCard from '@/components/product-card';
+import FilterBar from '@/components/filter-bar';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -12,12 +13,21 @@ export const metadata: Metadata = {
 export default async function ProductsPage({
   searchParams,
 }: {
-  searchParams: Promise<{ q?: string }>;
+  searchParams: Promise<{ q?: string; category?: string; brand?: string }>;
 }) {
-  const { q } = await searchParams;
+  const { q, category, brand } = await searchParams;
   const adapter = createContentAdapter(seedStore);
   const query = q?.trim() ?? '';
-  const products = adapter.searchProducts(query);
+  const products = adapter.filterProducts({
+    query: query || undefined,
+    category: category || undefined,
+    brand: brand || undefined,
+  });
+  const categories = adapter.getPublishedCategories();
+  const brands = adapter.getBrands();
+
+  const activeFilters = [category, brand].filter(Boolean);
+  const hasFilters = !!query || activeFilters.length > 0;
 
   return (
     <section>
@@ -25,22 +35,34 @@ export default async function ProductsPage({
         Products
       </h1>
 
-      {query ? (
-        <p style={{ color: 'var(--color-text-secondary)', marginBottom: 'var(--space-8)' }}>
+      <FilterBar
+        categories={categories}
+        brands={brands}
+        activeCategory={category}
+        activeBrand={brand}
+      />
+
+      {hasFilters ? (
+        <p
+          style={{
+            color: 'var(--color-text-secondary)',
+            marginBottom: 'var(--space-6)',
+          }}
+        >
           {products.length === 0
-            ? `No results for "${query}".`
-            : `${products.length} result${products.length === 1 ? '' : 's'} for "${query}".`}
+            ? `No results${query ? ` for "${query}"` : ''}${category ? ` in "${categories.find((c) => c.slug === category)?.name ?? category}"` : ''}${brand ? ` by "${brand}"` : ''}.`
+            : `${products.length} result${products.length === 1 ? '' : 's'}${query ? ` for "${query}"` : ''}${category ? ` in "${categories.find((c) => c.slug === category)?.name ?? category}"` : ''}${brand ? ` by "${brand}"` : ''}.`}
         </p>
       ) : (
-        <p style={{ color: 'var(--color-text-secondary)', marginBottom: 'var(--space-8)' }}>
+        <p style={{ color: 'var(--color-text-secondary)', marginBottom: 'var(--space-6)' }}>
           Browse our catalogue of technology products.
         </p>
       )}
 
       {products.length === 0 ? (
         <p style={{ color: 'var(--color-text-muted)' }}>
-          {query
-            ? 'Try a different search term or browse all products.'
+          {hasFilters
+            ? 'Try adjusting your filters or search term.'
             : 'No products available yet.'}
         </p>
       ) : (

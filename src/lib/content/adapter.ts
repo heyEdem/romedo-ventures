@@ -6,9 +6,17 @@ import type {
   Visibility,
 } from './types';
 
+export interface ProductFilters {
+  query?: string;
+  category?: string;
+  brand?: string;
+}
+
 export interface ContentAdapter {
   getPublishedProducts(): Product[];
   searchProducts(query: string): Product[];
+  filterProducts(filters: ProductFilters): Product[];
+  getBrands(): string[];
   getPublishedCategories(): Category[];
   getBranches(): Branch[];
   getContactConfig(): ContactConfig;
@@ -48,8 +56,25 @@ export function createContentAdapter(store: ContentStore): ContentAdapter {
       if (!query.trim()) return published;
       return published.filter((product) => matchesQuery(product, query));
     },
+    filterProducts({ query, category, brand }) {
+      let results = filterPublished(store.products);
+      if (query?.trim()) {
+        results = results.filter((product) => matchesQuery(product, query));
+      }
+      if (category) {
+        results = results.filter((product) => product.category === category);
+      }
+      if (brand) {
+        results = results.filter((product) => product.brand === brand);
+      }
+      return results;
+    },
     getPublishedCategories() {
       return filterPublished(store.categories);
+    },
+    getBrands() {
+      const published = filterPublished(store.products);
+      return [...new Set(published.map((p) => p.brand))].sort();
     },
     getBranches() {
       return store.branches;
