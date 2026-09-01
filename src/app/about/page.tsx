@@ -3,34 +3,61 @@ import { createContentAdapter } from '@/lib/content/adapter';
 
 export default function AboutPage() {
   const adapter = createContentAdapter(seedStore);
+  const info = adapter.getBusinessInfo();
   const branches = adapter.getBranches();
+
+  const hasTagline = Boolean(info.tagline);
+  const hasDescription = Boolean(info.description);
+  const hasMission = Boolean(info.mission);
+  const hasAnyInfo = hasTagline || hasDescription || hasMission;
 
   return (
     <section>
       <h1 style={{ fontSize: 'var(--text-3xl)', marginBottom: 'var(--space-4)' }}>
         About Romedo Ventures
       </h1>
-      <p
-        style={{
-          fontSize: 'var(--text-lg)',
-          color: 'var(--color-text-secondary)',
-          marginBottom: 'var(--space-6)',
-        }}
-      >
-        Technology for everyday life.
-      </p>
 
-      <div style={{ marginBottom: 'var(--space-8)' }}>
-        <p style={{ color: 'var(--color-text-secondary)', marginBottom: 'var(--space-4)' }}>
-          Romedo Ventures is your trusted technology retailer, offering a wide
-          range of smartphones, laptops, tablets, and accessories from leading
-          brands.
+      {hasTagline && (
+        <p
+          style={{
+            fontSize: 'var(--text-lg)',
+            color: 'var(--color-text-secondary)',
+            marginBottom: 'var(--space-6)',
+          }}
+        >
+          {info.tagline}
         </p>
-        <p style={{ color: 'var(--color-text-secondary)' }}>
-          Visit one of our branches to explore products in person and get
-          personalised advice from our team.
+      )}
+
+      {hasDescription && (
+        <div style={{ marginBottom: 'var(--space-8)' }}>
+          <p style={{ color: 'var(--color-text-secondary)' }}>
+            {info.description}
+          </p>
+        </div>
+      )}
+
+      {hasMission && (
+        <div style={{ marginBottom: 'var(--space-8)' }}>
+          <h2 style={{ fontSize: 'var(--text-2xl)', marginBottom: 'var(--space-4)' }}>
+            Our Mission
+          </h2>
+          <p style={{ color: 'var(--color-text-secondary)' }}>
+            {info.mission}
+          </p>
+        </div>
+      )}
+
+      {!hasAnyInfo && (
+        <p
+          style={{
+            color: 'var(--color-text-muted)',
+            marginBottom: 'var(--space-8)',
+          }}
+        >
+          Business information is being verified and will be available soon.
         </p>
-      </div>
+      )}
 
       {branches.length > 0 && (
         <div>

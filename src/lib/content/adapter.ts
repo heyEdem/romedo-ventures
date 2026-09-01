@@ -1,5 +1,6 @@
 import type {
   Branch,
+  BusinessInfo,
   Category,
   ContactConfig,
   Product,
@@ -23,6 +24,7 @@ export interface ContentAdapter {
   getCategoryBySlug(slug: string): Category | undefined;
   getBranches(): Branch[];
   getContactConfig(): ContactConfig;
+  getBusinessInfo(): BusinessInfo;
 }
 
 export interface ContentStore {
@@ -30,6 +32,7 @@ export interface ContentStore {
   categories: Category[];
   branches: Branch[];
   contact: ContactConfig;
+  businessInfo: BusinessInfo;
 }
 
 function filterPublished<T extends { published: Visibility }>(
@@ -98,6 +101,9 @@ export function createContentAdapter(store: ContentStore): ContentAdapter {
     },
     getContactConfig() {
       return store.contact;
+    },
+    getBusinessInfo() {
+      return store.businessInfo;
     },
   };
 }

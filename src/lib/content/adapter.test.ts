@@ -67,6 +67,7 @@ const mixedStore: ContentStore = {
     phone: '+233123456789',
     defaultMessage: 'Hello Romedo Ventures',
   },
+  businessInfo: {},
 };
 
 describe('ContentAdapterTest', () => {

@@ -1,10 +1,13 @@
 import { seedStore } from '@/lib/content/seed';
 import { createContentAdapter } from '@/lib/content/adapter';
+import { buildGeneralWhatsAppUrl, buildTelUrl } from '@/lib/contact';
 
 export default function ContactPage() {
   const adapter = createContentAdapter(seedStore);
-  const { whatsapp, phone, defaultMessage } = adapter.getContactConfig();
+  const contactConfig = adapter.getContactConfig();
   const branches = adapter.getBranches();
+  const whatsappUrl = buildGeneralWhatsAppUrl(contactConfig);
+  const telUrl = buildTelUrl(contactConfig.phone);
 
   return (
     <section>
@@ -24,7 +27,7 @@ export default function ContactPage() {
         }}
       >
         <a
-          href={`https://wa.me/${whatsapp.replace(/[^0-9]/g, '')}?text=${encodeURIComponent(defaultMessage)}`}
+          href={whatsappUrl}
           target="_blank"
           rel="noopener noreferrer"
           style={{
@@ -48,7 +51,7 @@ export default function ContactPage() {
         </a>
 
         <a
-          href={`tel:${phone}`}
+          href={telUrl}
           style={{
             display: 'flex',
             flexDirection: 'column',
@@ -65,7 +68,7 @@ export default function ContactPage() {
             Call Us
           </span>
           <span style={{ fontSize: 'var(--text-sm)', opacity: 0.9 }}>
-            {phone}
+            {contactConfig.phone}
           </span>
         </a>
       </div>

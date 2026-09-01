@@ -1,4 +1,4 @@
-import type { Branch, Category, ContactConfig, Product } from './types';
+import type { Branch, BusinessInfo, Category, ContactConfig, Product } from './types';
 import type { ContentStore } from './adapter';
 
 const PLACEHOLDER_NOTE = 'Placeholder data — verify before public release';
@@ -314,9 +314,12 @@ export const seedContact: ContactConfig = {
     "Hi Romedo Ventures, I'm interested in your products. Are they currently available?",
 };
 
+export const seedBusinessInfo: BusinessInfo = {};
+
 export const seedStore: ContentStore = {
   products: seedProducts,
   categories: seedCategories,
   branches: seedBranches,
   contact: seedContact,
+  businessInfo: seedBusinessInfo,
 };

@@ -40,6 +40,13 @@ export interface Branch {
   verificationNote?: string;
 }
 
+export interface BusinessInfo {
+  tagline?: string;
+  description?: string;
+  foundedYear?: string;
+  mission?: string;
+}
+
 export interface ContactConfig {
   whatsapp: string;
   phone: string;

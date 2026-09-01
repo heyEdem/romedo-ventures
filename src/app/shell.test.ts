@@ -83,8 +83,8 @@ describe('ResponsiveSmokeTest', () => {
 
   it('contact page includes WhatsApp and phone CTAs', () => {
     const contact = readFile('app/contact/page.tsx');
-    expect(contact).toContain('wa.me');
-    expect(contact).toContain('tel:');
+    expect(contact).toContain('buildGeneralWhatsAppUrl');
+    expect(contact).toContain('buildTelUrl');
   });
 
   it('layout provides semantic page wrapper', () => {
