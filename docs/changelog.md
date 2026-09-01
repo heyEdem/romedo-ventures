@@ -60,3 +60,9 @@
 - Added card CSS system: `.card`, `.card-image`, `.card-body`, `.card-title`, `.card-description`, `.card-price`, `.card-meta`, hover shadow transition.
 - Refactored `/categories`, `/categories/[slug]`, `/products`, and homepage to use shared card components, eliminating duplicated inline card markup.
 - Phase 3 (frontend shell and navigation) is now complete.
+
+## 2026-09-01 — Implement product catalogue query
+- Added `searchProducts(query)` method to `ContentAdapter` — searches published products by name, brand, shortDescription, and description.
+- Updated `/products` page to accept `searchParams.q` and display filtered results with result count.
+- Added `CatalogueSearchTest` covering name, brand, description, empty query, and draft exclusion.
+- All 68 tests pass, lint clean.

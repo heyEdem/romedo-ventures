@@ -8,6 +8,7 @@ import type {
 
 export interface ContentAdapter {
   getPublishedProducts(): Product[];
+  searchProducts(query: string): Product[];
   getPublishedCategories(): Category[];
   getBranches(): Branch[];
   getContactConfig(): ContactConfig;
@@ -26,10 +27,26 @@ function filterPublished<T extends { published: Visibility }>(
   return items.filter((item) => item.published === 'published');
 }
 
+function matchesQuery(product: Product, query: string): boolean {
+  const term = query.toLowerCase();
+  const fields = [
+    product.name,
+    product.brand,
+    product.shortDescription,
+    product.description,
+  ];
+  return fields.some((field) => field.toLowerCase().includes(term));
+}
+
 export function createContentAdapter(store: ContentStore): ContentAdapter {
   return {
     getPublishedProducts() {
       return filterPublished(store.products);
+    },
+    searchProducts(query: string) {
+      const published = filterPublished(store.products);
+      if (!query.trim()) return published;
+      return published.filter((product) => matchesQuery(product, query));
     },
     getPublishedCategories() {
       return filterPublished(store.categories);

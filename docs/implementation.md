@@ -53,6 +53,12 @@
 - **Initialization:** Imported by `src/app/page.tsx` and rendered between the hero and categories sections.
 - **Non-obvious logic:** Empty queries redirect to `/products` without a query parameter. Uses `useRouter` from `next/navigation` for client-side navigation.
 
+### Product catalogue search
+- **Entry point:** `src/app/products/page.tsx`, `src/lib/content/adapter.ts`
+- **Key classes/functions:** `ContentAdapter.searchProducts(query)` — returns published products matching name, brand, shortDescription, or description. Products page consumes `searchParams.q` to display filtered or full results.
+- **Initialization:** Server component reads `searchParams`, passes query to adapter's `searchProducts`.
+- **Non-obvious logic:** Empty or whitespace-only queries return all published products. Case-insensitive matching across four text fields. Draft products are excluded from results.
+
 ### Design tokens
 - **Entry point:** `src/app/globals.css`
 - **Key classes/functions:** CSS custom properties for colors, typography, spacing, breakpoints, radius, shadows, and focus rings.
