@@ -123,3 +123,9 @@
 - Enhanced product detail page metadata with OpenGraph fields.
 - Added 10 metadata smoke tests verifying titles, descriptions, and openGraph presence across all routes.
 - All 143 tests pass.
+
+## 2026-09-02 — Configure Vercel preview
+- Created `vercel.json` with Next.js framework detection, build command, and output directory.
+- Added placeholder JPEG images in `public/images/categories/` and `public/images/products/` matching all seed data paths.
+- Updated `.env.example` to document `NEXT_PUBLIC_SITE_URL` for Vercel deployment.
+- Production build passes with 16 routes, 143 tests green.

@@ -1,7 +1,7 @@
 # Romedo Ventures Prototype Task Index
 
 **Last Updated:** 2026-09-02  
-**Completed:** 19/24 (79%)  
+**Completed:** 20/24 (83%)  
 **Status:** In Progress
 
 Checkbox states: `[x]` done · `[~]` in progress · `[ ]` pending. Task IDs are `<phase>.<sequence>`.
@@ -17,8 +17,8 @@ Checkbox states: `[x]` done · `[~]` in progress · `[ ]` pending. Task IDs are 
 | 5 | Product details and contact links | 3/3 | Complete |
 | 6 | About, locations, and contact | 3/3 | Complete |
 | 7 | Quality, SEO, and mobile QA | 3/3 | Complete |
-| 8 | Vercel deployment and owner demo | 0/3 | Not Started |
-| **Total** | | **18/24** | **In Progress** |
+| 8 | Vercel deployment and owner demo | 1/3 | In Progress |
+| **Total** | | **20/24** | **In Progress** |
 
 ## Source map
 
@@ -77,7 +77,7 @@ Checkbox states: `[x]` done · `[~]` in progress · `[ ]` pending. Task IDs are 
 
 ## Phase 8 — Vercel Deployment and Owner Demo
 
-- [ ] 8.1 [Configure Vercel preview](epics/epic-008-vercel-deployment-and-owner-demo/tasks/task-001-configure-vercel-preview.md)
+- [x] 8.1 [Configure Vercel preview](epics/epic-008-vercel-deployment-and-owner-demo/tasks/task-001-configure-vercel-preview.md)
 - [ ] 8.2 [Run content and scope release audit](epics/epic-008-vercel-deployment-and-owner-demo/tasks/task-002-run-content-and-scope-release-audit.md)
 - [ ] 8.3 [Execute owner end-to-end demo](epics/epic-008-vercel-deployment-and-owner-demo/tasks/task-003-execute-owner-end-to-end-demo.md)
 
@@ -101,3 +101,4 @@ Checkbox states: `[x]` done · `[~]` in progress · `[ ]` pending. Task IDs are 
 | 2026-09-01 | Task 7.1 complete: Skip-to-content link, prefers-reduced-motion, Escape key for mobile nav, aria-hidden on SVGs, branch card aria-labels, breadcrumb nav, 18 accessibility smoke tests. |
 | 2026-09-02 | Task 7.2 complete: Replaced all native img tags with next/image for automatic WebP/AVIF conversion, responsive srcset, lazy loading, and CLS prevention. |
 | 2026-09-02 | Task 7.3 complete: Added SEO metadata (title, description, openGraph) to all 7 routes, dynamic generateMetadata for product detail and category detail, and 10 metadata smoke tests. |
+| 2026-09-02 | Task 8.1 complete: Created vercel.json with build config, added public/images placeholders for seed data paths, updated .env.example for Vercel deployment. |
