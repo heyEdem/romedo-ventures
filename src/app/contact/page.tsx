@@ -2,6 +2,18 @@ import { seedStore } from '@/lib/content/seed';
 import { createContentAdapter } from '@/lib/content/adapter';
 import { buildGeneralWhatsAppUrl, buildTelUrl } from '@/lib/contact';
 import BranchCard from '@/components/branch-card';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Contact | Romedo Ventures',
+  description:
+    'Get in touch with Romedo Ventures via WhatsApp or phone. Visit our branches across Ghana.',
+  openGraph: {
+    title: 'Contact Romedo Ventures',
+    description: 'Get in touch via WhatsApp or phone.',
+    type: 'website',
+  },
+};
 
 export default function ContactPage() {
   const adapter = createContentAdapter(seedStore);

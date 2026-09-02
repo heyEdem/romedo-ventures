@@ -1,6 +1,18 @@
 import { seedStore } from '@/lib/content/seed';
 import { createContentAdapter } from '@/lib/content/adapter';
 import BranchCard from '@/components/branch-card';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'About | Romedo Ventures',
+  description:
+    'Learn about Romedo Ventures — our mission to bring technology for everyday life to customers across Ghana.',
+  openGraph: {
+    title: 'About Romedo Ventures',
+    description: 'Our mission to bring technology for everyday life.',
+    type: 'website',
+  },
+};
 
 export default function AboutPage() {
   const adapter = createContentAdapter(seedStore);

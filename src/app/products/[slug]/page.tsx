@@ -24,6 +24,11 @@ export function generateMetadata({
   return {
     title: `${product.name} — Romedo Ventures`,
     description: product.shortDescription,
+    openGraph: {
+      title: product.name,
+      description: product.shortDescription,
+      type: 'website',
+    },
   };
 }
 

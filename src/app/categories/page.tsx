@@ -1,6 +1,18 @@
 import { seedStore } from '@/lib/content/seed';
 import { createContentAdapter } from '@/lib/content/adapter';
 import CategoryCard from '@/components/category-card';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Categories | Romedo Ventures',
+  description:
+    'Browse product categories including smartphones, laptops, tablets, and accessories.',
+  openGraph: {
+    title: 'Product Categories',
+    description: 'Browse product categories at Romedo Ventures.',
+    type: 'website',
+  },
+};
 
 export default function CategoriesPage() {
   const adapter = createContentAdapter(seedStore);

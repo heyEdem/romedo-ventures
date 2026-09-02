@@ -82,5 +82,11 @@
 - **Key classes/functions:** CSS custom properties for colors, typography, spacing, breakpoints, radius, shadows, and focus rings.
 - **Non-obvious logic:** Tokens use a 4px base spacing scale. Breakpoints are defined as `--bp-sm/md/lg` custom properties for reference; actual media queries use `@media (min-width: 40rem)` etc. Focus ring uses double box-shadow for visibility on both light and dark backgrounds.
 
+### SEO metadata
+- **Entry point:** `src/app/metadata.test.ts`, per-page `metadata` or `generateMetadata` exports.
+- **Key classes/functions:** Static `metadata` exports on Home, Products, About, Contact, and Categories index pages. Dynamic `generateMetadata` on product detail and category detail pages. Each export provides `title`, `description`, and `openGraph` fields.
+- **Initialization:** Next.js reads metadata exports at build/request time and injects `<title>`, `<meta>`, and OpenGraph tags into the document `<head>`.
+- **Non-obvious logic:** Product detail and category detail use `generateMetadata` with `params` to resolve dynamic titles and descriptions. All routes include `openGraph` for social sharing. Tests read source files as strings to verify metadata presence.
+
 ## Configuration
 | `NEXT_PUBLIC_SITE_URL` | `http://localhost:3000` | Public site origin for later canonical URL generation |

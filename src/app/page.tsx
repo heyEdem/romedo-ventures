@@ -4,8 +4,20 @@ import { createContentAdapter } from '@/lib/content/adapter';
 import SearchBar from '@/components/search-bar';
 import CategoryCard from '@/components/category-card';
 import ProductCard from '@/components/product-card';
+import type { Metadata } from 'next';
 
 export const prototypeName = 'Romedo Ventures';
+
+export const metadata: Metadata = {
+  title: 'Romedo Ventures — Technology for everyday life',
+  description:
+    'Browse smartphones, laptops, tablets, and accessories from leading brands. Fast delivery across Ghana via WhatsApp or phone.',
+  openGraph: {
+    title: 'Romedo Ventures',
+    description: 'Technology for everyday life.',
+    type: 'website',
+  },
+};
 
 export default function Home() {
   const adapter = createContentAdapter(seedStore);

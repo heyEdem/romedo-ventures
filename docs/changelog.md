@@ -116,3 +116,10 @@
 - Wrapped category detail breadcrumb in `<nav aria-label="Breadcrumb">` with `aria-current="page"`.
 - Added 18 accessibility smoke tests covering skip link, landmarks, labels, keyboard, SVGs, and reduced motion.
 - All 133 tests pass, production build succeeds.
+
+## 2026-09-02 — Add SEO metadata and mobile QA
+- Added `metadata` exports (title, description, openGraph) to Home, Products, About, Contact, and Categories index pages.
+- Added `generateMetadata` to product detail and category detail pages for dynamic per-route SEO.
+- Enhanced product detail page metadata with OpenGraph fields.
+- Added 10 metadata smoke tests verifying titles, descriptions, and openGraph presence across all routes.
+- All 143 tests pass.

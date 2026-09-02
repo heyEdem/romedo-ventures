@@ -1,7 +1,7 @@
 # Romedo Ventures Prototype Task Index
 
 **Last Updated:** 2026-09-02  
-**Completed:** 18/24 (75%)  
+**Completed:** 19/24 (79%)  
 **Status:** In Progress
 
 Checkbox states: `[x]` done · `[~]` in progress · `[ ]` pending. Task IDs are `<phase>.<sequence>`.
@@ -16,9 +16,9 @@ Checkbox states: `[x]` done · `[~]` in progress · `[ ]` pending. Task IDs are 
 | 4 | Catalogue search and filters | 3/3 | Complete |
 | 5 | Product details and contact links | 3/3 | Complete |
 | 6 | About, locations, and contact | 3/3 | Complete |
-| 7 | Quality, SEO, and mobile QA | 2/3 | In Progress |
+| 7 | Quality, SEO, and mobile QA | 3/3 | Complete |
 | 8 | Vercel deployment and owner demo | 0/3 | Not Started |
-| **Total** | | **17/24** | **In Progress** |
+| **Total** | | **18/24** | **In Progress** |
 
 ## Source map
 
@@ -73,7 +73,7 @@ Checkbox states: `[x]` done · `[~]` in progress · `[ ]` pending. Task IDs are 
 
 - [x] 7.1 [Complete accessibility and responsive polish](epics/epic-007-quality-seo-and-mobile-qa/tasks/task-001-complete-accessibility-and-responsive-polish.md)
 - [x] 7.2 [Optimize images and loading](epics/epic-007-quality-seo-and-mobile-qa/tasks/task-002-optimize-images-and-loading.md)
-- [ ] 7.3 [Add SEO metadata and mobile QA](epics/epic-007-quality-seo-and-mobile-qa/tasks/task-003-add-seo-metadata-and-mobile-qa.md)
+- [x] 7.3 [Add SEO metadata and mobile QA](epics/epic-007-quality-seo-and-mobile-qa/tasks/task-003-add-seo-metadata-and-mobile-qa.md)
 
 ## Phase 8 — Vercel Deployment and Owner Demo
 
@@ -100,3 +100,4 @@ Checkbox states: `[x]` done · `[~]` in progress · `[ ]` pending. Task IDs are 
 | 2026-09-01 | Task 6.3 complete: Contact page with shared WhatsApp/phone CTAs, BranchCard rendering, and graceful missing-data behavior. |
 | 2026-09-01 | Task 7.1 complete: Skip-to-content link, prefers-reduced-motion, Escape key for mobile nav, aria-hidden on SVGs, branch card aria-labels, breadcrumb nav, 18 accessibility smoke tests. |
 | 2026-09-02 | Task 7.2 complete: Replaced all native img tags with next/image for automatic WebP/AVIF conversion, responsive srcset, lazy loading, and CLS prevention. |
+| 2026-09-02 | Task 7.3 complete: Added SEO metadata (title, description, openGraph) to all 7 routes, dynamic generateMetadata for product detail and category detail, and 10 metadata smoke tests. |

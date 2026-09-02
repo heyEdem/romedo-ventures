@@ -1,7 +1,7 @@
 # PLAN-007: Quality, SEO, and Mobile QA
 
 **Date:** 2026-08-31  
-**Status:** Todo  
+**Status:** Done  
 **Implements:** ADR-005  
 **Estimated complexity:** Medium
 
@@ -18,9 +18,9 @@ Make the prototype credible and shareable through accessibility, performance, me
 
 ## Acceptance criteria
 
-- [ ] `AccessibilitySmokeTest.publicRoutesHaveLabelsFocusAndHeadings`: public routes meet the required interaction and heading checks.
-- [ ] `ResponsiveSmokeTest.mobileRoutesFitAndKeepContactActionsUsable`: narrow viewport remains readable and actionable.
-- [ ] `MetadataTest.productRouteHasCanonicalAndProductMetadata`: published product route emits required metadata.
+- [x] `AccessibilitySmokeTest.publicRoutesHaveLabelsFocusAndHeadings`: public routes meet the required interaction and heading checks.
+- [x] `ResponsiveSmokeTest.mobileRoutesFitAndKeepContactActionsUsable`: narrow viewport remains readable and actionable.
+- [x] `MetadataTest.productRouteHasCanonicalAndProductMetadata`: published product route emits required metadata.
 
 ## Out of scope
 
@@ -28,5 +28,5 @@ Make the prototype credible and shareable through accessibility, performance, me
 
 ## Definition of done
 
-- [ ] Automated checks and manual mobile QA findings are resolved or documented.
+- [x] Automated checks and manual mobile QA findings are resolved or documented.
 

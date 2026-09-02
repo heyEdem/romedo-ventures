@@ -2,6 +2,27 @@ import { seedStore } from '@/lib/content/seed';
 import { createContentAdapter } from '@/lib/content/adapter';
 import Link from 'next/link';
 import ProductCard from '@/components/product-card';
+import type { Metadata } from 'next';
+
+export function generateMetadata({
+  params,
+}: {
+  params: { slug: string };
+}): Metadata {
+  const adapter = createContentAdapter(seedStore);
+  const categories = adapter.getPublishedCategories();
+  const category = categories.find((c) => c.slug === params.slug);
+  if (!category) return { title: 'Category not found' };
+  return {
+    title: `${category.name} | Romedo Ventures`,
+    description: category.description,
+    openGraph: {
+      title: category.name,
+      description: category.description,
+      type: 'website',
+    },
+  };
+}
 
 export default function CategoryDetailPage({
   params,

@@ -11,6 +11,12 @@ export const metadata: Metadata = {
   title: 'Products | Romedo Ventures',
   description:
     'Browse our catalogue of smartphones, laptops, tablets, and accessories from leading brands.',
+  openGraph: {
+    title: 'Products | Romedo Ventures',
+    description:
+      'Browse our catalogue of smartphones, laptops, tablets, and accessories.',
+    type: 'website',
+  },
 };
 
 export default async function ProductsPage({
