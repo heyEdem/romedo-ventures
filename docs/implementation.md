@@ -11,6 +11,12 @@
 
 ## Per-Module Breakdown
 
+### Release audit tests
+- **Entry point:** `src/__tests__/release-audit.test.ts`
+- **Key classes/functions:** `ContentReleaseCheck` — verifies seed data has verification markers, placeholder phones, and draft exclusion. `ScopeAuditTest` — rejects e-commerce UI labels, prohibited dependencies, and cart/checkout routes.
+- **Initialization:** Run via `npm test` alongside other Vitest suites.
+- **Non-obvious logic:** Tests scan source files as strings to detect prohibited labels; seed data assertions confirm no record is falsely marked `verified`.
+
 ### Product documentation
 - **Entry point:** `prototype/docs/prototype-prd.md`
 - **Key classes/functions:** None; this is the source product requirements document.

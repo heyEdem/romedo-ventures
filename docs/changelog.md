@@ -129,3 +129,9 @@
 - Added placeholder JPEG images in `public/images/categories/` and `public/images/products/` matching all seed data paths.
 - Updated `.env.example` to document `NEXT_PUBLIC_SITE_URL` for Vercel deployment.
 - Production build passes with 16 routes, 143 tests green.
+
+## 2026-09-02 — Run content and scope release audit
+- Created `src/__tests__/release-audit.test.ts` with `ContentReleaseCheck` and `ScopeAuditTest` suites.
+- Content checks: every seed product/category/branch carries verificationStatus, placeholder phones use `+233XXXXXXXXX`, demo records have verification notes, adapter excludes drafts, price labels use GHS only.
+- Scope checks: no e-commerce UI labels (buy now, add to cart, checkout, payment, stock, inventory), no prohibited payment dependencies, no cart/checkout/order/account routes.
+- All 158 tests pass.
