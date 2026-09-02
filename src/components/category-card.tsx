@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 interface CategoryCardProps {
   slug: string;
@@ -35,9 +36,12 @@ export default function CategoryCard({
             </svg>
           </div>
         ) : (
-          <img
+          <Image
             src={image}
             alt={name}
+            width={400}
+            height={300}
+            loading="lazy"
             className="card-image-img"
             onError={() => setImgError(true)}
           />

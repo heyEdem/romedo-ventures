@@ -618,6 +618,10 @@ button {
   object-fit: cover;
 }
 
+.card-image-img[role="presentation"] {
+  display: none;
+}
+
 .card-image-fallback {
   display: flex;
   align-items: center;

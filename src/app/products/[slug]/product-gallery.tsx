@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Image from 'next/image';
 
 interface ProductGalleryProps {
   images: string[];
@@ -36,9 +37,12 @@ export default function ProductGallery({ images, name }: ProductGalleryProps) {
             <span>Image coming soon</span>
           </div>
         ) : (
-          <img
+          <Image
             src={displayImages[activeIndex]}
             alt={`${name} — image ${activeIndex + 1} of ${displayImages.length}`}
+            width={800}
+            height={600}
+            priority
             className="product-gallery-img"
             onError={() => setImgError(true)}
           />
@@ -59,7 +63,7 @@ export default function ProductGallery({ images, name }: ProductGalleryProps) {
                 setImgError(false);
               }}
             >
-              <img src={img} alt="" />
+              <Image src={img} alt="" width={56} height={56} loading="lazy" />
             </button>
           ))}
         </div>

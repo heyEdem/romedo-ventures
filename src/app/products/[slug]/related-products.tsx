@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import type { Product } from '@/lib/content/types';
 
 interface RelatedProductsProps {
@@ -32,9 +33,12 @@ function RelatedCard({ product }: { product: Product }) {
             </svg>
           </div>
         ) : (
-          <img
+          <Image
             src={product.images[0]}
             alt={product.name}
+            width={400}
+            height={300}
+            loading="lazy"
             className="card-image-img"
             onError={() => setImgError(true)}
           />
