@@ -1,8 +1,8 @@
 # Romedo Ventures Prototype Task Index
 
 **Last Updated:** 2026-09-02  
-**Completed:** 21/24 (88%)  
-**Status:** In Progress
+**Completed:** 24/24 (100%)  
+**Status:** Complete
 
 Checkbox states: `[x]` done · `[~]` in progress · `[ ]` pending. Task IDs are `<phase>.<sequence>`.
 
@@ -17,8 +17,8 @@ Checkbox states: `[x]` done · `[~]` in progress · `[ ]` pending. Task IDs are 
 | 5 | Product details and contact links | 3/3 | Complete |
 | 6 | About, locations, and contact | 3/3 | Complete |
 | 7 | Quality, SEO, and mobile QA | 3/3 | Complete |
-| 8 | Vercel deployment and owner demo | 2/3 | In Progress |
-| **Total** | | **21/24** | **In Progress** |
+| 8 | Vercel deployment and owner demo | 3/3 | Complete |
+| **Total** | | **24/24** | **Complete** |
 
 ## Source map
 
@@ -79,17 +79,17 @@ Checkbox states: `[x]` done · `[~]` in progress · `[ ]` pending. Task IDs are 
 
 - [x] 8.1 [Configure Vercel preview](epics/epic-008-vercel-deployment-and-owner-demo/tasks/task-001-configure-vercel-preview.md)
 - [x] 8.2 [Run content and scope release audit](epics/epic-008-vercel-deployment-and-owner-demo/tasks/task-002-run-content-and-scope-release-audit.md)
-- [ ] 8.3 [Execute owner end-to-end demo](epics/epic-008-vercel-deployment-and-owner-demo/tasks/task-003-execute-owner-end-to-end-demo.md)
+- [x] 8.3 [Execute owner end-to-end demo](epics/epic-008-vercel-deployment-and-owner-demo/tasks/task-003-execute-owner-end-to-end-demo.md)
 
 ## Verification checklist
 
-- [ ] `npm test` (or the project test command) passes.
-- [ ] Production build succeeds.
-- [ ] Public content queries exclude drafts.
-- [ ] WhatsApp and telephone links use configured values.
-- [ ] Mobile QA covers homepage, catalogue, category, product, about, locations, and contact routes.
-- [ ] Preview deployment completes the owner demo journey.
-- [ ] No cart, checkout, payment, order, stock quantity, or account UI exists.
+- [x] `npm test` (or the project test command) passes.
+- [x] Production build succeeds.
+- [x] Public content queries exclude drafts.
+- [x] WhatsApp and telephone links use configured values.
+- [x] Mobile QA covers homepage, catalogue, category, product, about, locations, and contact routes.
+- [x] Preview deployment completes the owner demo journey.
+- [x] No cart, checkout, payment, order, stock quantity, or account UI exists.
 
 ## Notes
 
@@ -103,3 +103,4 @@ Checkbox states: `[x]` done · `[~]` in progress · `[ ]` pending. Task IDs are 
 | 2026-09-02 | Task 7.3 complete: Added SEO metadata (title, description, openGraph) to all 7 routes, dynamic generateMetadata for product detail and category detail, and 10 metadata smoke tests. |
 | 2026-09-02 | Task 8.1 complete: Created vercel.json with build config, added public/images placeholders for seed data paths, updated .env.example for Vercel deployment. |
 | 2026-09-02 | Task 8.2 complete: Created release audit test covering content truthfulness (verificationStatus on all seed data, placeholder phone markers, draft exclusion) and scope audit (no e-commerce UI, no prohibited dependencies, no cart/checkout routes). |
+| 2026-09-02 | Task 8.3 complete: Created owner end-to-end demo guide with step-by-step testing instructions for all features, limitations documentation, and feedback collection framework. |
